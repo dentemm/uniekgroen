@@ -12,7 +12,7 @@ except ImportError:
 # GENERAL SETTINGS
 #
 
-WSGI_APPLICATION = 'healthhouse.wsgi.application'
+WSGI_APPLICATION = 'uniekgroen.wsgi.application'
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
