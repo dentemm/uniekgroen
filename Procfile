@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --no-input; gunicorn uniekgroen.wsgi --log-file - --log-level debug
+web: gunicorn uniekgroen.wsgi --log-file -
