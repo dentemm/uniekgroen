@@ -25,10 +25,6 @@ SECURE_SSL_REDIRECT = True
 # WHITENOISE CONFIG
 #
 
-MIDDLEWARE += [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-]
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #
