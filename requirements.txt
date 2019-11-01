@@ -1,6 +1,7 @@
 beautifulsoup4==4.6.0
 certifi==2019.9.11
 chardet==3.0.4
+dj-database-url==0.5.0
 Django==2.2.6
 django-modelcluster==4.4
 django-taggit==0.24.0
@@ -10,6 +11,7 @@ draftjs-exporter==2.1.7
 html5lib==1.0.1
 idna==2.8
 Pillow==6.2.1
+psycopg2==2.8.4
 pytz==2019.3
 requests==2.22.0
 six==1.12.0
@@ -18,4 +20,5 @@ Unidecode==1.1.1
 urllib3==1.25.6
 wagtail==2.6.3
 webencodings==0.5.1
+whitenoise==4.1.4
 Willow==1.1
