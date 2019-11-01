@@ -22,12 +22,14 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.uniekgroen.be', '.aws.amazon.com', 
 SECURE_SSL_REDIRECT = True
 
 #
-# MIDDLEWARE
+# WHITENOISE CONFIG
 #
 
 MIDDLEWARE += [
-    'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #
 # DATABASE
