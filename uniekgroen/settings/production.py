@@ -26,7 +26,7 @@ SECURE_SSL_REDIRECT = True
 #
 
 MIDDLEWARE += [
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ]
 
 #
