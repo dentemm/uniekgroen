@@ -5,17 +5,18 @@
 
 {% block extra_css %}
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
+<div class="page-header">
+  <div class="content-center">
+    <div class="motto">
+      <h1 class="text-center">uniek groen</h1>
+      <h3 class="text-center">tuinontwerp & realisatie</h3>
+    </div>
+  </div>
+</div>
+
 
 {% endblock content %}
