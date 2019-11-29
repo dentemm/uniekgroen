@@ -36,7 +36,7 @@ class WebsiteSettings(ClusterableModel, BaseSetting):
     )
 
     class Meta:
-        verbose_name = 'Website settings'
+        verbose_name = 'Algemene informatie'
 
 WebsiteSettings.panels = [
     MultiFieldPanel(
@@ -59,7 +59,7 @@ WebsiteSettings.panels = [
         ImageChooserPanel('error_image')
     ],
         heading='Error pages (404 / 500)',
-        classname='collapsible collapsed'
+        classname='collapsible'
     )
 ]
 
