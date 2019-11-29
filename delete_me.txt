@@ -4,3 +4,4 @@ fonts/nucleo-icons.svg
 assets/img/kit/photo_swipe/default-skin.png
 preloader.gif
 img/ink.png
+/farid-askerov.jpg
