@@ -1,3 +1,4 @@
 TO DELETE
 
 fonts/nucleo-icons.svg
+assets/img/kit/photo_swipe/default-skin.png
