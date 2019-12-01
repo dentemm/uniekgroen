@@ -77,20 +77,32 @@ HomePage.content_panels = Page.content_panels + [
         FieldRowPanel([
             FieldPanel('section_1_title', classname='col8')
         ])
-    ], heading='Sectie 1'),
+    ], 
+        heading='Sectie 1',
+        classname='collapsible'
+    ),
     MultiFieldPanel([
         FieldRowPanel([
             FieldPanel('section_2_title', classname='col8')
         ])
-    ], heading='Sectie 2'),
+    ], 
+        heading='Sectie 2',
+        classname='collapsible'
+    ),
     MultiFieldPanel([
         FieldRowPanel([
             FieldPanel('section_3_title', classname='col8')
         ])
-    ], heading='Sectie 3'),
+    ], 
+        heading='Sectie 3',
+        classname='collapsible'
+    ),
         MultiFieldPanel([
         FieldRowPanel([
             FieldPanel('section_4_title', classname='col8')
         ])
-    ], heading='Sectie 4')
+    ], 
+        heading='Sectie 4',
+        classname='collapsible'
+    ),
 ]
