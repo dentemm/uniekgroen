@@ -65,4 +65,32 @@ WebsiteSettings.panels = [
 
 
 class HomePage(Page):
-    pass
+
+    section_1_title = models.CharField(verbose_name='Titel sectie 1', max_length=64, default='')
+    section_2_title = models.CharField(verbose_name='Titel sectie 2', max_length=64, default='')
+    section_3_title = models.CharField(verbose_name='Titel sectie 3', max_length=64, default='')
+    section_4_title = models.CharField(verbose_name='Titel sectie 4', max_length=64, default='')
+
+
+HomePage.content_panels = Page.content_panels + [
+    MultiFieldPanel([
+        FieldRowPanel([
+            FieldPanel('section_1_title', classname='col8')
+        ])
+    ], heading='Sectie 1'),
+    MultiFieldPanel([
+        FieldRowPanel([
+            FieldPanel('section_2_title', classname='col8')
+        ])
+    ], heading='Sectie 2'),
+    MultiFieldPanel([
+        FieldRowPanel([
+            FieldPanel('section_3_title', classname='col8')
+        ])
+    ], heading='Sectie 3'),
+        MultiFieldPanel([
+        FieldRowPanel([
+            FieldPanel('section_4_title', classname='col8')
+        ])
+    ], heading='Sectie 4')
+]
