@@ -7,40 +7,40 @@
 
 {% block content %}
 
-<section class="page-header">
-  <div class="content-center">
-    <div class="motto">
-      <div class="row">
-        <div class="offset-lg-4 col-lg-4">
-          <img src="{% static 'images/logo_v1.png' %}" alt="Image" class="img-rounded img-responsive" />
+  <section class="page-header">
+    <div class="content-center">
+      <div class="motto">
+        <div class="row">
+          <div class="offset-lg-4 col-lg-4">
+            <img src="{% static 'images/logo_v1.png' %}" alt="Image" class="img-rounded img-responsive" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  {% include 'home/sections/nav.html' %}
-</section>
+  <section class="snap-child-end">
+    {% include 'home/sections/nav.html' %}
+  </section>
 
-<section>
-  {% include 'home/sections/section1.html' %}
-</section>
+  <section class="snap-child">
+    {% include 'home/sections/section1.html' %}
+  </section>
 
-<section>
-  {% include 'home/sections/section3.html' %}
-</section>
+  <section class="snap-child">
+    {% include 'home/sections/section3.html' %}
+  </section>
 
-<section>
-  {% include 'home/sections/section2.html' %}
-</section>
+  <section class="snap-child">
+    {% include 'home/sections/section2.html' %}
+  </section>
 
-<section>
-  {% include 'home/sections/section4.html' %}
-</section>
+  <section class="snap-child">
+    {% include 'home/sections/section4.html' %}
+  </section>
 
-<section>
-  {% include 'home/sections/contact.html' %}
-</section>
+  <section class="snap-child">
+    {% include 'home/sections/contact.html' %}
+  </section>
 
 {% endblock content %}
