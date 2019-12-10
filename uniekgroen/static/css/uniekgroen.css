@@ -7,6 +7,61 @@ h1 {
   background-color: white; 
   height: 100vh;
   /* background-image: url("https://media.flixel.com/cinemagraph/7ur0pq7ftx03aprsa51x?hd=true"); */
+  /* background-image: url("https://www.stooptuinen.nl/images/projecten/Strakke-tuin-met-groene-sfeer/Strakke_tuin_met_groen_uitzicht_zichtlijnen.jpg");*/
+}
+
+.image-overlay {
+
+}
+
+@keyframes fadingout {
+  0% {opacity: 100%;}
+  100% {opacity: 0%;}
+}
+
+@-webkit-keyframes fadingout {
+  0% {opacity: 1}
+  100% {opacity: 0}
+}
+
+@keyframes fadingin {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@-webkit-keyframes fadingin {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.fade-animation {
+  animation-name: fadingout;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-name: fadingout;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.appear-animation {
+  opacity: 0;
+
+  animation-name: fadingin;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-name: fadingin;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
 }
 
 .snap-container {

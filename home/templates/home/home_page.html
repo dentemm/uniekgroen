@@ -8,11 +8,12 @@
 {% block content %}
 
   <section class="page-header">
+    <img class="img-fluid fade-animation" src="https://www.stooptuinen.nl/images/projecten/Strakke-tuin-met-groene-sfeer/Strakke_tuin_met_groen_uitzicht_zichtlijnen.jpg" />
     <div class="content-center">
       <div class="motto">
         <div class="row">
-          <div class="offset-lg-3 col-lg-6">
-            <img src="{% static 'images/logo_v2.png' %}" alt="Image" class="img-rounded img-responsive" />
+          <div class="offset-lg-3 col-lg-6 offset-sm-2 col-sm-10">
+            <img src="{% static 'images/logo_v2.png' %}" alt="Image" class="img-rounded img-responsive appear-animation" />
           </div>
         </div>
       </div>
@@ -44,3 +45,10 @@
   </section>
 
 {% endblock content %}
+
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+    {% static 'js/jquery.min.js ' %}
+    {% static 'js/bootstrap.min.js' %}
+    {% static 'js/paper-kit.min.js' %}
+{% endblock %}
