@@ -3,6 +3,22 @@ h1 {
   font-weight: 500;
 }
 
+
+.logo-title {
+  font-family:'Century Gothic','Futura','Didact Gothic',sans-serif;
+  font-weight: 200;
+  font-size: 8em;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+.logo-subtitle {
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  font-size: 3em;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
 .page-header {
   background-color: white; 
   height: 100vh;
