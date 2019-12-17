@@ -3,7 +3,6 @@ h1 {
   font-weight: 500;
 }
 
-
 .logo-title {
   font-family:'Century Gothic','Futura','Didact Gothic',sans-serif;
   font-weight: 200;
@@ -26,8 +25,12 @@ h1 {
   /* background-image: url("https://www.stooptuinen.nl/images/projecten/Strakke-tuin-met-groene-sfeer/Strakke_tuin_met_groen_uitzicht_zichtlijnen.jpg");*/
 }
 
-.image-overlay {
-
+.sticky-nav {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 @keyframes fadingout {

@@ -1,21 +1,37 @@
 <div class="section vh-100">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-3">
+      <div class="offset-md-3 col-md-4 bg-primary">
+        {% comment %} <img class="img-fluid mt-5" src="https://st3.depositphotos.com/15601592/18792/i/1600/depositphotos_187920938-stock-photo-full-length-portrait-two-male.jpg"/> {% endcomment %}
       </div>
-      <div class="col-md-6 text-center">
-        <h1 class="title revealOnScroll">{{ title }}</h1>
-        <h5 class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. 
-          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, 
-          a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, 
-          a pharetra augue.
-        </h5>
+      <div class="col-md-5 text-center bg-primary">
+        <div class="bg-primary">
+          <h1 class="title text-white">{{ title }}</h1>
+          <h5 class="description text-white px-5 pb-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. 
+            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, 
+            a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, 
+            a pharetra augue.
+          </h5>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+        </div>
         <br>
-        <a href="nucleo-icons-demo.html" class="btn btn-primary btn-round btn-lg " target="_blank">Meer informatie</a>
-        <a href="https://nucleoapp.com/?ref=1712" class="btn btn-outline-primary btn-round btn-lg " target="_blank">Wij zijn cool!</a>
+        {% comment %} <a href="nucleo-icons-demo.html" class="btn btn-primary btn-round btn-lg " target="_blank">Meer informatie</a>
+        <a href="https://nucleoapp.com/?ref=1712" class="btn btn-outline-primary btn-round btn-lg " target="_blank">Wij zijn cool!</a> {% endcomment %}
       </div>
       <div class="col-md-3">
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-md-1 col-md-6">
+        <div style="position: absolute; top: -50vh;">
+          <img class="img-fluid mt-5" src="{{ img }}"/>
+        <div>
       </div>
     </div>
   </div>

@@ -66,7 +66,16 @@ WebsiteSettings.panels = [
 
 class HomePage(Page):
 
+    # Section 1: Who are we? 
     section_1_title = models.CharField(verbose_name='Titel sectie 1', max_length=64, default='')
+    section_1_image = models.ForeignKey(
+        'wagtailimages.Image',
+        on_delete=models.SET_NULL,
+        related_name='+',
+        null=True,
+        blank=True
+    )
+
     section_2_title = models.CharField(verbose_name='Titel sectie 2', max_length=64, default='')
     section_3_title = models.CharField(verbose_name='Titel sectie 3', max_length=64, default='')
     section_4_title = models.CharField(verbose_name='Titel sectie 4', max_length=64, default='')
@@ -76,10 +85,11 @@ HomePage.content_panels = Page.content_panels + [
     MultiFieldPanel([
         FieldRowPanel([
             FieldPanel('section_1_title', classname='col8')
-        ])
+        ]),
+        ImageChooserPanel('section_1_image')
     ], 
         heading='Sectie 1',
-        classname='collapsible'
+        classname='collapsible collapsed'
     ),
     MultiFieldPanel([
         FieldRowPanel([
@@ -87,7 +97,7 @@ HomePage.content_panels = Page.content_panels + [
         ])
     ], 
         heading='Sectie 2',
-        classname='collapsible'
+        classname='collapsible collapsed'
     ),
     MultiFieldPanel([
         FieldRowPanel([
@@ -95,7 +105,7 @@ HomePage.content_panels = Page.content_panels + [
         ])
     ], 
         heading='Sectie 3',
-        classname='collapsible'
+        classname='collapsible collapsed'
     ),
         MultiFieldPanel([
         FieldRowPanel([
@@ -103,6 +113,6 @@ HomePage.content_panels = Page.content_panels + [
         ])
     ], 
         heading='Sectie 4',
-        classname='collapsible'
+        classname='collapsible collapsed'
     ),
 ]

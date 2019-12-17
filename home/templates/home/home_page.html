@@ -28,7 +28,7 @@
   </section>
 
   <section class="snap-child">
-    {% include 'home/sections/section1.html' with title=page.section_1_title %}
+    {% include 'home/sections/section1.html' with title=page.section_1_title img=page.section_1_image.file.url %}
   </section>
 
   <section class="snap-child">
@@ -51,7 +51,7 @@
 
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
-    {% static 'js/jquery.min.js ' %}
-    {% static 'js/bootstrap.min.js' %}
-    {% static 'js/paper-kit.min.js' %}
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/paper-kit.min.js' %}"></script>
 {% endblock %}
