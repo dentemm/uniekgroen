@@ -3,6 +3,10 @@ h1 {
   font-weight: 500;
 }
 
+.bg-gray {
+  background-color: #eeeeee !important;
+}
+
 .logo-title {
   font-family:'Century Gothic','Futura','Didact Gothic',sans-serif;
   font-weight: 200;
@@ -16,6 +20,21 @@ h1 {
   font-size: 3em;
   letter-spacing: -0.04em;
   margin: 0;
+}
+
+.opacity-95 {
+  opacity: 0.95;
+}
+
+.parallax-row {
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.height-35 {
+  min-height: 35em !important;
 }
 
 .page-header {

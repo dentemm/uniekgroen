@@ -1,20 +1,55 @@
-<div class="section section-dark vh-100">
-  <div class="row">
-    <div class="col-md-12 col-lg-6">
-      <div class="image-container">
-        <img class="img img-fluid" src="https://www.thecanvasfactory.com.au/blog/wp-content/uploads/sites/3/modern-garden-Harrington-porter.jpg" alt="">
-      </div>
-    </div>
-    <div class="col-md-10 col-lg-4 ml-auto mr-auto">
-      <div class="container basic-container">
-        <h1 class="title">{{ title }}</h1>
-        <h6 class="category">Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</h6>
-        <h5 class="description">
-          Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. 
-          Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam 
-          venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-        </h5>
+{% load static %}
+
+<div class="section bg-dark">
+  <div class="container text-center">
+    <h1 class="title text-white">{{ title }}</h1>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row px-5 parallax-row" style="background-image: url({% static 'test_images/example1.jpg' %})">
+      <div class="col-lg-4 bg-primary opacity-95 py-5 px-3">
+        <div class="container basic-container height-35">
+          <h3 class="category text-white">Morbi leo risus, porta ac consect</h3>
+          <h4 class="description text-white">
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. 
+            Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam 
+            venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+          </h4>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="container-fluid">
+    <div class="row px-5 parallax-row" style="background-image: url({% static 'test_images/example3.jpg' %})">
+      <div class="offset-lg-7 col-lg-4 bg-dark opacity-95 py-5 px-3">
+        <div class="container basic-container height-35">
+          <h3 class="category text-white">Morbi leo risus, porta ac consect</h3>
+          <h4 class="description text-white">
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. 
+            Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam 
+            venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row px-5 parallax-row" style="background-image: url({% static 'test_images/example2.png' %})">
+      <div class="offset-lg-2 col-lg-4 bg-gray opacity-95 py-5 px-3">
+        <div class="container basic-container height-35">
+          <h3 class="category text-dark">Morbi leo risus, porta ac consect</h3>
+          <h4 class="description text-dark">
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. 
+            Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam 
+            venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>
