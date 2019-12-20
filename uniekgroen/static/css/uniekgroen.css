@@ -7,23 +7,16 @@ h1 {
   background-color: #eeeeee !important;
 }
 
-.logo-title {
-  font-family:'Century Gothic','Futura','Didact Gothic',sans-serif;
-  font-weight: 200;
-  font-size: 8em;
-  letter-spacing: -0.05em;
-  margin: 0;
-}
-
-.logo-subtitle {
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
-  font-size: 3em;
-  letter-spacing: -0.04em;
-  margin: 0;
-}
-
 .opacity-95 {
   opacity: 0.95;
+}
+
+.height-25 {
+  height: 25em !important;
+}
+
+.height-35 {
+  min-height: 35em !important;
 }
 
 .parallax-row {
@@ -33,24 +26,32 @@ h1 {
   min-height: 100%;
 }
 
-.height-35 {
-  min-height: 35em !important;
-}
-
 .page-header {
   background-color: white; 
   height: 100vh;
-  /* background-image: url("https://media.flixel.com/cinemagraph/7ur0pq7ftx03aprsa51x?hd=true"); */
-  /* background-image: url("https://www.stooptuinen.nl/images/projecten/Strakke-tuin-met-groene-sfeer/Strakke_tuin_met_groen_uitzicht_zichtlijnen.jpg");*/
 }
 
-.sticky-nav {
+.scrollspy-ontwerp {
+  position: relative;
+  height: 25em !important;
+  overflow-y: scroll;
+}
+
+.snap-parent {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-child {
+  scroll-snap-align: start;
+}
+
+/* .sticky-nav {
   position: fixed;
   top: 0px;
   width: 100%;
   padding-top: 0px;
   padding-bottom: 0px;
-}
+} */
 
 @keyframes fadingout {
   0% {opacity: 100%;}
