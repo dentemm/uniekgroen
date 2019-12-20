@@ -1,6 +1,7 @@
 from django.db import models
 
 from wagtail.core.models import Page
+from wagtail.core.fields import RichTextField
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
@@ -67,7 +68,7 @@ WebsiteSettings.panels = [
 class HomePage(Page):
 
     # Section 1: Who are we? 
-    section_1_title = models.CharField(verbose_name='Titel sectie 1', max_length=64, default='')
+    section_1_title = models.CharField(verbose_name='Titel', max_length=64, default='')
     section_1_image = models.ForeignKey(
         'wagtailimages.Image',
         on_delete=models.SET_NULL,
@@ -76,9 +77,20 @@ class HomePage(Page):
         blank=True
     )
 
-    section_2_title = models.CharField(verbose_name='Titel sectie 2', max_length=64, default='')
-    section_3_title = models.CharField(verbose_name='Titel sectie 3', max_length=64, default='')
-    section_4_title = models.CharField(verbose_name='Titel sectie 4', max_length=64, default='')
+    section_2_title = models.CharField(verbose_name='Titel', max_length=64, default='')
+
+    section_2_subtitle1 = models.CharField(verbose_name='Ondertitel 1', max_length=64, default='All-in-one oplossing')
+    section_2_description_1 = models.TextField('Beschrijving 1', default="", blank=True)
+
+    section_2_subtitle2 = models.CharField(verbose_name='Ondertitel 2', max_length=64, default='Ontwerpfase')
+    section_2_description_2 = models.TextField('Beschrijving 2', default="", blank=True)
+
+    section_2_subtitle3 = models.CharField(verbose_name='Ondertitel 3', max_length=64, default='Realisatie')
+    section_2_description_3 = models.TextField('Beschrijving 1', default="", blank=True)
+
+
+    section_3_title = models.CharField(verbose_name='Titel', max_length=64, default='')
+    section_4_title = models.CharField(verbose_name='Titel', max_length=64, default='')
 
 
 HomePage.content_panels = Page.content_panels + [
@@ -94,7 +106,13 @@ HomePage.content_panels = Page.content_panels + [
     MultiFieldPanel([
         FieldRowPanel([
             FieldPanel('section_2_title', classname='col8')
-        ])
+        ]),
+        FieldPanel('section_2_subtitle1', classname='col8'),
+        FieldPanel('section_2_description_1', classname='col8'),
+        FieldPanel('section_2_subtitle2', classname='col8'),
+        FieldPanel('section_2_description_2', classname='col8'),
+        FieldPanel('section_2_subtitle3', classname='col8'),
+        FieldPanel('section_2_description_3', classname='col8')
     ], 
         heading='Sectie 2',
         classname='collapsible collapsed'
