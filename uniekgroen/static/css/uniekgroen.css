@@ -113,3 +113,8 @@ h1 {
 .snap-child-end {
   scroll-snap-align: end;
 }
+
+.temm {
+  position: fixed;
+  bottom: 0px;
+}
