@@ -1,12 +1,14 @@
-{% load static %}
+{% load static wagtailimages_tags %}
 
 <div class="section bg-dark pt-0">
   <div class="container text-center py-5">
     <h1 class="title text-white">{{ page.section_2_title }}</h1>
   </div>
 
+  {% image page.section_2_image_part_1 original as img1 %}
+
   <div class="container-fluid">
-    <div class="row px-5 parallax-row" style="background-image: url({% static 'test_images/example1.jpg' %})">
+    <div class="row px-5 parallax-row" style="background-image: url({{ img1.file.url }})">
       <div class="col-lg-4 bg-primary opacity-95 py-5 px-3">
         <div class="container basic-container height-35">
           <h2 class="category text-white">{{ page.section_2_subtitle1 }}</h2>
@@ -18,8 +20,10 @@
     </div>
   </div>
 
+  {% image page.section_2_image_part_2 original as img2 %}
+
   <div class="container-fluid">
-    <div class="row px-5 parallax-row" style="background-image: url({% static 'test_images/example3.jpg' %})">
+    <div class="row px-5 parallax-row" style="background-image: url({{ img2.file.url }})">
       <div class="offset-lg-7 col-lg-4 bg-dark opacity-95 py-5 px-3">
         <div class="container basic-container height-35">
           <h2 class="category text-white">{{ page.section_2_subtitle2 }}</h2>
@@ -31,8 +35,10 @@
     </div>
   </div>
 
+  {% image page.section_2_image_part_3 original as img3 %}
+
   <div class="container-fluid">
-    <div class="row px-5 parallax-row" style="background-image: url({% static 'test_images/example2.png' %})">
+    <div class="row px-5 parallax-row" style="background-image: url({{ img3.file.url }})">
       <div class="offset-lg-2 col-lg-4 bg-gray opacity-95 py-5 px-3">
         <div class="container basic-container height-35">
           <h2 class="category text-dark">{{ page.section_2_subtitle3 }}</h2>
