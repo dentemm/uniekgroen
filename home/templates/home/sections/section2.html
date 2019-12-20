@@ -1,75 +1,55 @@
-<div class="section vh-100">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-8 offset-md-2 text-center">
-          <div class="space-top"></div>
-          <h1 class="title">{{ title }}</h1>
-        </div>
-        <div class="container">
-          <div class="space-top"></div>
-          <div class="row">
-            <div class="col-sm-3">
-              <div class="card" data-background="color" data-color="green">
-                <div class="card-body text-center">
-                  <div class="card-icon">
-                    <i class="nc-icon nc-money-coins"></i>
-                  </div>
-                  <h4 class="card-title">Deel 1</h4>
-                  <p class="card-description">
-                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere 
-                    consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Curabitur blandit tempus porttitor.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card" data-background="color" data-color="blue">
-                <div class="card-body text-center">
-                  <div class="card-icon">
-                    <i class="nc-icon nc-watch-time"></i>
-                  </div>
-                  <h4 class="card-title">Deel 2</h4>
-                  <p class="card-description">
-                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere 
-                    consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Curabitur blandit tempus porttitor.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card" data-background="color" data-color="purple">
-                <div class="card-body text-center">
-                  <div class="card-icon">
-                    <i class="nc-icon nc-layout-11"></i>
-                  </div>
-                  <h4 class="card-title">Deel 3</h4>
-                  <p class="card-description">
-                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere 
-                    consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Curabitur blandit tempus porttitor.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card" data-background="color" data-color="brown">
-                <div class="card-body text-center">
-                  <div class="card-icon">
-                    <i class="nc-icon nc-align-center"></i>
-                  </div>
-                  <h4 class="card-title">Deel 4</h4>
-                  <p class="card-description">
-                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere 
-                    consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Curabitur blandit tempus porttitor.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+{% load static wagtailimages_tags %}
+
+<div class="section bg-dark pt-0">
+  <div class="container text-center py-5">
+    <h1 class="title text-white">{{ page.section_2_title }}</h1>
+  </div>
+
+  {% image page.section_2_image_part_1 original as img1 %}
+
+  <div class="container-fluid">
+    <div class="row px-5 parallax-row" style="background-image: url({{ img1.file.url }})">
+      <div class="col-xl-4 col-lg-5 col-md-7 bg-primary opacity-95 py-5 px-3">
+        <div class="container basic-container height-35">
+          <h2 class="category text-white font-weight-bolder">{{ page.section_2_subtitle1 }}</h2>
+          <h4 class="description text-white">
+            {{ page.section_2_description_1 }}
+          </h4>
         </div>
       </div>
     </div>
   </div>
+
+  {% image page.section_2_image_part_2 original as img2 %}
+
+  <div class="container-fluid">
+    <div class="row px-5 parallax-row" style="background-image: url({{ img2.file.url }})">
+      <div class="offset-xl-7 col-xl-4 offset-lg-6 col-lg-5 offset-lg-7 col-lg-4 offset-md-5 col-md-7 bg-dark opacity-95 py-5 px-3">
+        <div class="container basic-container height-35">
+          <h2 class="category text-white font-weight-bolder">{{ page.section_2_subtitle2 }}</h2>
+          <h4 class="description text-white">
+            {{ page.section_2_description_2 }}
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% image page.section_2_image_part_3 original as img3 %}
+
+  <div class="container-fluid">
+    <div class="row px-5 parallax-row" style="background-image: url({{ img3.file.url }})">
+      <div class="offset-xl-2 col-xl-4 offset-lg-2 col-lg-5 offset-md-1 col-md-7 bg-gray opacity-95 py-5 px-3">
+        <div class="container basic-container height-35">
+          <h2 class="category text-dark font-weight-bolder">{{ page.section_2_subtitle3 }}</h2>
+          <h4 class="description text-dark">
+            {{ page.section_2_description_3 }}
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
