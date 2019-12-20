@@ -135,15 +135,22 @@ HomePage.content_panels = Page.content_panels + [
         ]),
         FieldPanel('section_2_subtitle1', classname='col8'),
         FieldPanel('section_2_description_1', classname='col8'),
-        ImageChooserPanel('section_2_image_part_1'),
+        FieldRowPanel([
+            ImageChooserPanel('section_2_image_part_1'),
+        ]),
+        
 
         FieldPanel('section_2_subtitle2', classname='col8'),
         FieldPanel('section_2_description_2', classname='col8'),
-        ImageChooserPanel('section_2_image_part_2'),
+        FieldRowPanel([
+            ImageChooserPanel('section_2_image_part_2'),
+        ]),
 
         FieldPanel('section_2_subtitle3', classname='col8'),
         FieldPanel('section_2_description_3', classname='col8'),
-        ImageChooserPanel('section_2_image_part_3'),
+        FieldRowPanel([
+            ImageChooserPanel('section_2_image_part_3'),
+        ]),
     ], 
         heading='Sectie 2',
         classname='collapsible collapsed'
