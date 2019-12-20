@@ -77,16 +77,42 @@ class HomePage(Page):
         blank=True
     )
 
+    # Section 2: What do we have to offer?
+
     section_2_title = models.CharField(verbose_name='Titel', max_length=64, default='')
 
     section_2_subtitle1 = models.CharField(verbose_name='Ondertitel 1', max_length=64, default='All-in-one oplossing')
     section_2_description_1 = models.TextField('Beschrijving 1', default="", blank=True)
+    section_2_image_part_1 = models.ForeignKey(
+        'wagtailimages.Image',
+        verbose_name='Achtergrond 1',
+        on_delete=models.SET_NULL,
+        related_name='+',
+        null=True,
+        blank=True
+    )
 
     section_2_subtitle2 = models.CharField(verbose_name='Ondertitel 2', max_length=64, default='Ontwerpfase')
     section_2_description_2 = models.TextField('Beschrijving 2', default="", blank=True)
+    section_2_image_part_2 = models.ForeignKey(
+        'wagtailimages.Image',
+        verbose_name='Achtergrond 2',
+        on_delete=models.SET_NULL,
+        related_name='+',
+        null=True,
+        blank=True
+    )
 
     section_2_subtitle3 = models.CharField(verbose_name='Ondertitel 3', max_length=64, default='Realisatie')
     section_2_description_3 = models.TextField('Beschrijving 1', default="", blank=True)
+    section_2_image_part_3 = models.ForeignKey(
+        'wagtailimages.Image',
+        verbose_name='Achtergrond 3',
+        on_delete=models.SET_NULL,
+        related_name='+',
+        null=True,
+        blank=True
+    )
 
 
     section_3_title = models.CharField(verbose_name='Titel', max_length=64, default='')
@@ -109,10 +135,15 @@ HomePage.content_panels = Page.content_panels + [
         ]),
         FieldPanel('section_2_subtitle1', classname='col8'),
         FieldPanel('section_2_description_1', classname='col8'),
+        ImageChooserPanel('section_2_image_part_1'),
+
         FieldPanel('section_2_subtitle2', classname='col8'),
         FieldPanel('section_2_description_2', classname='col8'),
+        ImageChooserPanel('section_2_image_part_2'),
+
         FieldPanel('section_2_subtitle3', classname='col8'),
-        FieldPanel('section_2_description_3', classname='col8')
+        FieldPanel('section_2_description_3', classname='col8'),
+        ImageChooserPanel('section_2_image_part_3'),
     ], 
         heading='Sectie 2',
         classname='collapsible collapsed'
