@@ -68,6 +68,7 @@ WebsiteSettings.panels = [
 class HomePage(Page):
 
     # Section 1: Who are we? 
+
     section_1_title = models.CharField(verbose_name='Titel', max_length=64, default='')
     section_1_image = models.ForeignKey(
         'wagtailimages.Image',
@@ -114,8 +115,14 @@ class HomePage(Page):
         blank=True
     )
 
+    # Section 3: How do we work?
 
     section_3_title = models.CharField(verbose_name='Titel', max_length=64, default='')
+
+    
+
+    # Section 4: Portfolio
+
     section_4_title = models.CharField(verbose_name='Titel', max_length=64, default='')
 
 

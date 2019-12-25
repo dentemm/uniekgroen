@@ -1,4 +1,4 @@
-<div class="section vh-100">
+{% comment %} <div class="section vh-100">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8 offset-md-2 text-center">
@@ -28,15 +28,279 @@
       </div>
     </div>
 
-        <div id="list-example" class="list-group">
-          <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
-          <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
-          <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
-          <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
-        </div>
+    <div id="list-example" class="list-group bg-primary" style="position: absolute; width: 25%; top: 20em;">
+      <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+      <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+      <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+      <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+    </div>
 
   </div>
+</div> {% endcomment %}
+{% comment %} 
+<div class="vh-100 d-flex">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 text-center">
+        <div class="space-top"></div>
+        <h1 class="title">{{ title }}</h1>
+      </div>
+    </div>
+    <ul class="nav nav-pills nav-pills-primary justify-content-center my-5">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#home" role="tab">
+          <h3 class="my-0 px-5">Ontwerp fase</h3>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#profile" role="tab">
+          <h3 class="my-0 px-5">Realisatie fase</h3>
+        </a>
+      </li>
+    </ul>
 
 
 
+    <div class="tab-content">
+      <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">Eerste</div>
+      <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">Tweede</div>
+    </div>
+
+
+
+
+    <div class="row">
+      <div class="col-lg-2 offset-lg-4">
+      
+          <div class="info info-horizontal py-2">
+            <div class="icon">
+              <i class="nc-icon nc-camera-compact"></i>
+            </div>
+            <div class="description">
+              <h4 class="info-title"> Kennismaking </h4>
+            </div>
+          </div>
+         <div class="info info-horizontal py-2">
+            <div class="icon">
+              <i class="nc-icon nc-camera-compact"></i>
+            </div>
+            <div class="description">
+              <h4 class="info-title font-weight-bold"> Onderzoek </h4>
+            </div>
+          </div>
+        <div class="info info-horizontal py-2">
+            <div class="icon">
+              <i class="nc-icon nc-camera-compact"></i>
+            </div>
+            <div class="description">
+              <h4 class="info-title"> Offerte </h4>
+            </div>
+          </div>
+         <div class="info info-horizontal py-2">
+            <div class="icon">
+              <i class="nc-icon nc-camera-compact"></i>
+            </div>
+            <div class="description">
+              <h4 class="info-title"> Planning </h4>
+            </div>
+          </div>
+         <div class="info info-horizontal py-2">
+            <div class="icon">
+              <i class="nc-icon nc-camera-compact"></i>
+            </div>
+            <div class="description">
+              <h4 class="info-title"> Schetsen </h4>
+            </div>
+          </div>
+          <div class="info info-horizontal py-2">
+            <div class="icon">
+              <i class="nc-icon nc-camera-compact"></i>
+            </div>
+            <div class="description">
+              <h4 class="info-title"> Finaal ontwerp </h4>
+            </div>
+          </div>
+          <div class="info info-horizontal py-2">
+            <div class="icon">
+              <i class="nc-icon nc-camera-compact"></i>
+            </div>
+            <div class="description">
+              <h4 class="info-title"> Advies </h4>
+            </div>
+          </div>
+
+      </div>
+
+      <div class="col-lg-6">
+      
+
+      
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+{% comment %} <div class="section vh-100 bg-primary">
+  <div class="h-container">
+    <div class="h-scroll">
+      <div class="h-content-container">
+        <div class="h-content">
+          <div class="h-item">
+          </div>
+          <div class="h-item">
+          </div>
+          <div class="h-item">
+          </div>
+          <div class="h-item">
+          </div>
+          <div class="h-item">
+          </div>
+          <div class="h-item">
+          </div>
+          <div class="h-item">
+          </div>
+          <div class="h-item">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+
+
+<div class="vh-100 d-flex">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 text-center">
+        <div class="space-top"></div>
+        <h1 class="title">{{ title }}</h1>
+      </div>
+    </div>
+    <ul class="nav nav-pills nav-pills-primary justify-content-center my-5">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#part1" role="tab">
+          <h3 class="my-0 px-5">Ontwerp fase</h3>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#part2" role="tab">
+          <h3 class="my-0 px-5">Realisatie fase</h3>
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+
+    <div class="row tab-pane active" id="part1">
+      <div class="col-lg-2 offset-lg-4">
+        <div class="nav-tabs-navigation">
+          <div class="nav-tabs-wrapper">
+            <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#info" role="tab" data-toggle="tab">
+                  Info
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#description" role="tab" data-toggle="tab">Description</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#concept" role="tab" data-toggle="tab">Concept</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#support" role="tab" data-toggle="tab">Support</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#extra" role="tab" data-toggle="tab">Extra</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane" id="info">
+            <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display.</p>
+            <p>It’s one continuous form where hardware and software function in perfect unison, creating a new generation of phone that’s better by any measure.</p>
+          </div>
+          <div class="tab-pane" id="description">
+            <p>The first thing you notice when you hold the phone is how great it feels in your hand. The cover glass curves down around the sides to meet the anodized aluminum enclosure in a remarkable, simplified design. </p>
+            <p>There are no distinct edges. No gaps. Just a smooth, seamless bond of metal and glass that feels like one continuous surface.</p>
+          </div>
+          <div class="tab-pane" id="concept">
+            <p>It’s one continuous form where hardware and software function in perfect unison, creating a new generation of phone that’s better by any measure.</p>
+            <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display. </p>
+          </div>
+          <div class="tab-pane" id="support">
+            <p>From the seamless transition of glass and metal to the streamlined profile, every detail was carefully considered to enhance your experience. So while its display is larger, the phone feels just right.</p>
+            <p>It’s one continuous form where hardware and software function in perfect unison, creating a new generation of phone that’s better by any measure.</p>
+          </div>
+          <div class="tab-pane" id="extra">
+            <p>It’s one continuous form where hardware and software function in perfect unison, creating a new generation of phone that’s better by any measure.</p>
+            <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="row tab-pane" id="part2">
+      <div class="col-lg-2 offset-lg-4">
+        <div class="nav-tabs-navigation">
+          <div class="nav-tabs-wrapper">
+            <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#info" role="tab" data-toggle="tab">
+                  Info
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#description" role="tab" data-toggle="tab">Description</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#concept" role="tab" data-toggle="tab">Concept</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#support" role="tab" data-toggle="tab">Support</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#extra" role="tab" data-toggle="tab">Extra</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane" id="info">
+            <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display.</p>
+            <p>It’s one continuous form where hardware and software function in perfect unison, creating a new generation of phone that’s better by any measure.</p>
+          </div>
+          <div class="tab-pane" id="description">
+            <p>The first thing you notice when you hold the phone is how great it feels in your hand. The cover glass curves down around the sides to meet the anodized aluminum enclosure in a remarkable, simplified design. </p>
+            <p>There are no distinct edges. No gaps. Just a smooth, seamless bond of metal and glass that feels like one continuous surface.</p>
+          </div>
+          <div class="tab-pane" id="concept">
+            <p>It’s one continuous form where hardware and software function in perfect unison, creating a new generation of phone that’s better by any measure.</p>
+            <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display. </p>
+          </div>
+          <div class="tab-pane" id="support">
+            <p>From the seamless transition of glass and metal to the streamlined profile, every detail was carefully considered to enhance your experience. So while its display is larger, the phone feels just right.</p>
+            <p>It’s one continuous form where hardware and software function in perfect unison, creating a new generation of phone that’s better by any measure.</p>
+          </div>
+          <div class="tab-pane" id="extra">
+            <p>It’s one continuous form where hardware and software function in perfect unison, creating a new generation of phone that’s better by any measure.</p>
+            <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+  </div>
 </div>

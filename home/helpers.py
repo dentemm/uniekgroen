@@ -2,6 +2,24 @@ from django.db import models
 
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
 
+class GenericItem(models.Model):
+
+    item = models.CharField(max_length=64)
+    volgorde = models.IntegerField()
+
+    class Meta:
+        verbose_name = 'Item'
+        verbose_name_plural = 'Items'
+
+GenericItem.panels = [
+    MultiFieldPanel([
+        FieldRowPanel([
+            FieldPanel('item', classname='col6'),
+            FieldPanel('volgorde', classname='col6')
+        ])
+    ])
+]
+
 class Adres(models.Model):
 
     woonplaats = models.CharField(max_length=40)
