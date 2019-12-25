@@ -1,14 +1,17 @@
+from django import forms
 from django.db import models
 
-from wagtail.core.models import Page
+from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import RichTextField
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 from modelcluster.models import ClusterableModel
+from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
 from .snippets import Locatie
+# from .helpers import GenericItem
 
 #
 # WAGTAIL SETTINGS
@@ -119,7 +122,7 @@ class HomePage(Page):
 
     section_3_title = models.CharField(verbose_name='Titel', max_length=64, default='')
 
-    
+    design_items = ParentalManyToManyField('home.GenericItem', blank=True)
 
     # Section 4: Portfolio
 
@@ -165,7 +168,8 @@ HomePage.content_panels = Page.content_panels + [
     MultiFieldPanel([
         FieldRowPanel([
             FieldPanel('section_3_title', classname='col8')
-        ])
+        ]),
+        FieldPanel('design_items', widget=forms.CheckboxSelectMultiple)
     ], 
         heading='Sectie 3',
         classname='collapsible collapsed'
@@ -179,3 +183,39 @@ HomePage.content_panels = Page.content_panels + [
         classname='collapsible collapsed'
     ),
 ]
+
+
+class GenericItem(Orderable, models.Model):
+
+    item = models.CharField(max_length=64)
+    volgorde = models.IntegerField()
+
+    class Meta:
+        verbose_name = 'Item'
+        verbose_name_plural = 'Items'
+
+GenericItem.panels = [
+    MultiFieldPanel([
+        FieldRowPanel([
+            FieldPanel('item', classname='col6'),
+            FieldPanel('volgorde', classname='col6')
+        ])
+    ])
+]
+
+# class DesignItem(GenericItem):
+
+#     page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='design_items')
+
+# DesignItem.panels = [
+#     MultiFieldPanel([
+#         FieldRowPanel([
+#             FieldPanel('item', classname='col6'),
+#             FieldPanel('volgorde', classname='col6')
+#         ])
+#     ])
+# ]
+
+# class DesignItem(GenericItem):
+
+#     design_item = ParentalKey(HomePage, verbose_name='ontwerp item', on_delete=models.CASCADE, related_name='items', null=True)
