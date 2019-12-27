@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-8 offset-md-2 text-center">
         <div class="space-top"></div>
-        <h1 class="title">{{ title }}</h1>
+        <h1 class="title">{{ page.section_3_title }}</h1>
       </div>
     </div>
     <ul class="nav nav-pills nav-pills-primary justify-content-center my-5">
@@ -21,48 +21,20 @@
 
     <div class="tab-content">
 
-      <!-- Part 1 -->
+      <!-- Part 1: Design phase -->
       <div class="tab-pane active" id="part1">
         <div class="row">
           <div class="col-lg-2 offset-lg-4">
             <div class="nav-tabs-navigation text-right">
               <div class="nav-tabs-wrapper">
                 <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
+                  {% for item in page.design_items.all %}
                   <li class="nav-item">
-                    <a class="nav-link active" href="#part11" role="tab" data-toggle="tab">
-                      <h4>Kennismaking</h4>
+                    <a class="nav-link {% if forloop.first %}active{% endif %}" href="#part1{{ forloop.counter }}" role="tab" data-toggle="tab">
+                      <h4>{{ item.name }}</h4>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#part12" role="tab" data-toggle="tab">
-                      <h4>Onderzoek</h4>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#part13" role="tab" data-toggle="tab">
-                      <h4>Offerte</h4>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#part14" role="tab" data-toggle="tab">
-                      <h4>Planning</h4>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#part15" role="tab" data-toggle="tab">
-                      <h4>Voorontwerp</h4>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#part16" role="tab" data-toggle="tab">
-                      <h4>Finaal ontwerp</h4>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#part17" role="tab" data-toggle="tab">
-                      <h4>Advies</h4>
-                    </a>
-                  </li>
+                  {% endfor %}
                 </ul>
               </div>
             </div>
@@ -70,38 +42,13 @@
           <div class="col-lg-4">
             <!-- Tab panes -->
             <div class="tab-content">
-              <div class="tab-pane py-5 active" id="part11">
+              {% for item in page.design_items.all %}
+              <div class="tab-pane py-5 {% if forloop.first %}active{% endif %}" id="part1{{ forloop.counter }}">
                 <h5>
-                  Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus.
+                  {{ item.description }}
                 </h5>
               </div>
-              <div class="tab-pane py-5" id="part12">
-                <h5>
-                  Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.                </h5>
-              </div>
-              <div class="tab-pane py-5" id="part13">
-                <h5>
-                  Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus.
-                </h5>
-              </div>
-              <div class="tab-pane py-5" id="part14">
-                <h5>
-                  Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.                </h5>
-              </div>
-              <div class="tab-pane py-5" id="part15">
-                <h5>
-                  Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus.
-                </h5>
-              </div>
-              <div class="tab-pane py-5" id="part16">
-                <h5>
-                  Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.                </h5>
-              </div>
-              <div class="tab-pane py-5" id="part17">
-                <h5>
-                  Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus.
-                </h5>
-              </div>
+              {% endfor %}
             </div>
           </div>
         </div>
