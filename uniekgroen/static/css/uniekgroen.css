@@ -26,15 +26,22 @@ h1 {
   min-height: 100%;
 }
 
+.nav-link.active > h4 {
+  color: #86c66e !important;
+  font-weight: 700 !important;
+}
+
+.nav-link.active::after {
+  display: none !important;
+}
+
+.nav-link.active::before {
+  display: none !important;
+}
+
 .page-header {
   background-color: white; 
   height: 100vh;
-}
-
-.scrollspy-ontwerp {
-  position: relative;
-  height: 25em !important;
-  overflow-y: scroll;
 }
 
 .snap-parent {

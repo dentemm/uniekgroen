@@ -2,15 +2,16 @@ from django import forms
 from django.db import models
 
 from wagtail.core.models import Page, Orderable
+from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.core.fields import RichTextField
 from wagtail.contrib.settings.models import BaseSetting, register_setting
-from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel, InlinePanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 from modelcluster.models import ClusterableModel
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 
-from .snippets import Locatie
+from .snippets import Locatie, GenericItem
 # from .helpers import GenericItem
 
 #
@@ -72,7 +73,7 @@ class HomePage(Page):
 
     # Section 1: Who are we? 
 
-    section_1_title = models.CharField(verbose_name='Titel', max_length=64, default='')
+    section_1_title = models.CharField(verbose_name='Sectie 1', max_length=64, default='')
     section_1_image = models.ForeignKey(
         'wagtailimages.Image',
         on_delete=models.SET_NULL,
@@ -83,7 +84,7 @@ class HomePage(Page):
 
     # Section 2: What do we have to offer?
 
-    section_2_title = models.CharField(verbose_name='Titel', max_length=64, default='')
+    section_2_title = models.CharField(verbose_name='Sectie 2', max_length=64, default='')
 
     section_2_subtitle1 = models.CharField(verbose_name='Ondertitel 1', max_length=64, default='All-in-one oplossing')
     section_2_description_1 = models.TextField('Beschrijving 1', default="", blank=True)
@@ -120,29 +121,34 @@ class HomePage(Page):
 
     # Section 3: How do we work?
 
-    section_3_title = models.CharField(verbose_name='Titel', max_length=64, default='')
+    section_3_title = models.CharField(verbose_name='Sectie 3', max_length=64, default='')
 
-    design_items = ParentalManyToManyField('home.GenericItem', blank=True)
+    # design_items = ParentalManyToManyField('home.GenericItem', blank=True)
 
     # Section 4: Portfolio
 
-    section_4_title = models.CharField(verbose_name='Titel', max_length=64, default='')
+    section_4_title = models.CharField(verbose_name='Sectie 4', max_length=64, default='')
 
 
 HomePage.content_panels = Page.content_panels + [
     MultiFieldPanel([
         FieldRowPanel([
-            FieldPanel('section_1_title', classname='col8')
+            FieldPanel('section_1_title', classname='col6'),
+            FieldPanel('section_2_title', classname='col6'),
+            FieldPanel('section_3_title', classname='col6'),
+            FieldPanel('section_4_title', classname='col6')
         ]),
+    ], 
+        heading='Algemeen',
+        classname='collapsible'
+    ),
+    MultiFieldPanel([
         ImageChooserPanel('section_1_image')
     ], 
         heading='Sectie 1',
         classname='collapsible collapsed'
     ),
     MultiFieldPanel([
-        FieldRowPanel([
-            FieldPanel('section_2_title', classname='col8')
-        ]),
         FieldPanel('section_2_subtitle1', classname='col8'),
         FieldPanel('section_2_description_1', classname='col8'),
         FieldRowPanel([
@@ -166,42 +172,42 @@ HomePage.content_panels = Page.content_panels + [
         classname='collapsible collapsed'
     ),
     MultiFieldPanel([
-        FieldRowPanel([
-            FieldPanel('section_3_title', classname='col8')
-        ]),
-        FieldPanel('design_items', widget=forms.CheckboxSelectMultiple)
+        InlinePanel('design_items')
     ], 
-        heading='Sectie 3',
-        classname='collapsible collapsed'
-    ),
-        MultiFieldPanel([
-        FieldRowPanel([
-            FieldPanel('section_4_title', classname='col8')
-        ])
-    ], 
-        heading='Sectie 4',
+        heading='Sectie 3 - ontwerp traject',
         classname='collapsible collapsed'
     ),
 ]
 
+# class HomePageDesignItem(models.Model):
+#     page = ParentalKey('home.HomePage', on_delete=models.CASCADE, related_name='design_items')
+#     item = models.ForeignKey(
+#         GenericItem, on_delete=models.CASCADE, related_name='blog_pages')
 
-class GenericItem(Orderable, models.Model):
+#     class Meta:
+#         unique_together = ('page', 'item')
 
-    item = models.CharField(max_length=64)
-    volgorde = models.IntegerField()
+# HomePageDesignItem.panels = [
+#         SnippetChooserPanel('item'),
+#     ]
 
-    class Meta:
-        verbose_name = 'Item'
-        verbose_name_plural = 'Items'
+# class GenericItem(Orderable, models.Model):
 
-GenericItem.panels = [
-    MultiFieldPanel([
-        FieldRowPanel([
-            FieldPanel('item', classname='col6'),
-            FieldPanel('volgorde', classname='col6')
-        ])
-    ])
-]
+#     item = models.CharField(max_length=64)
+#     volgorde = models.IntegerField()
+
+#     class Meta:
+#         verbose_name = 'Item'
+#         verbose_name_plural = 'Items'
+
+# GenericItem.panels = [
+#     MultiFieldPanel([
+#         FieldRowPanel([
+#             FieldPanel('item', classname='col6'),
+#             FieldPanel('volgorde', classname='col6')
+#         ])
+#     ])
+# ]
 
 # class DesignItem(GenericItem):
 
@@ -219,3 +225,34 @@ GenericItem.panels = [
 # class DesignItem(GenericItem):
 
 #     design_item = ParentalKey(HomePage, verbose_name='ontwerp item', on_delete=models.CASCADE, related_name='items', null=True)
+
+'''
+
+issues with snippets and manytomany inline
+
+https://docs.wagtail.io/en/v2.7/getting_started/tutorial.html#a-basic-blog 
+https://stackoverflow.com/questions/53512343/is-wagtails-inlinepanel-compatible-w-a-non-page-model
+
+
+https://www.accordbox.com/blog/wagtail-tip-1-how-replace-parentalmanytomanyfield-inlinepanel/
+
+
+
+https://stackoverflow.com/questions/50209851/django-wagtail-admin-handle-many-to-many-with-through
+
+
+Deze lijkt nog wel interessant, maar mss overkill ... 
+https://stackoverflow.com/questions/57453957/render-wagtail-inlinepanel-on-non-page-model-without-using-snippet
+
+'''
+
+
+class DesignItem(Orderable):
+    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='design_items')
+    name = models.CharField(verbose_name='naam', max_length=255)
+    description = models.TextField('beschrijving', default="", blank=True)
+
+DesignItem.panels = [
+    FieldPanel('name'),
+    FieldPanel('description')
+]

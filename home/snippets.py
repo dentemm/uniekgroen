@@ -2,6 +2,7 @@ import geopy
 
 from django.db import models
 
+from wagtail.core.models import Orderable
 from wagtail.snippets.models import register_snippet
 from wagtail.search import index
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
@@ -64,4 +65,21 @@ Locatie.panels = [
             FieldPanel('postcode', classname='col4')
         ]),
     ], heading='Locatie informatie')
+]
+
+@register_snippet
+class GenericItem(Orderable, models.Model):
+
+    item = models.CharField(max_length=64)
+
+    class Meta:
+        verbose_name = 'Item'
+        verbose_name_plural = 'Items'
+
+GenericItem.panels = [
+    MultiFieldPanel([
+        FieldRowPanel([
+            FieldPanel('item', classname='col6'),
+        ])
+    ])
 ]
