@@ -177,78 +177,26 @@ HomePage.content_panels = Page.content_panels + [
         heading='Sectie 3 - ontwerp traject',
         classname='collapsible collapsed'
     ),
+    MultiFieldPanel([
+        InlinePanel('implementation_items')
+    ], 
+        heading='Sectie 3 - realisatie traject',
+        classname='collapsible collapsed'
+    ),
 ]
-
-# class HomePageDesignItem(models.Model):
-#     page = ParentalKey('home.HomePage', on_delete=models.CASCADE, related_name='design_items')
-#     item = models.ForeignKey(
-#         GenericItem, on_delete=models.CASCADE, related_name='blog_pages')
-
-#     class Meta:
-#         unique_together = ('page', 'item')
-
-# HomePageDesignItem.panels = [
-#         SnippetChooserPanel('item'),
-#     ]
-
-# class GenericItem(Orderable, models.Model):
-
-#     item = models.CharField(max_length=64)
-#     volgorde = models.IntegerField()
-
-#     class Meta:
-#         verbose_name = 'Item'
-#         verbose_name_plural = 'Items'
-
-# GenericItem.panels = [
-#     MultiFieldPanel([
-#         FieldRowPanel([
-#             FieldPanel('item', classname='col6'),
-#             FieldPanel('volgorde', classname='col6')
-#         ])
-#     ])
-# ]
-
-# class DesignItem(GenericItem):
-
-#     page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='design_items')
-
-# DesignItem.panels = [
-#     MultiFieldPanel([
-#         FieldRowPanel([
-#             FieldPanel('item', classname='col6'),
-#             FieldPanel('volgorde', classname='col6')
-#         ])
-#     ])
-# ]
-
-# class DesignItem(GenericItem):
-
-#     design_item = ParentalKey(HomePage, verbose_name='ontwerp item', on_delete=models.CASCADE, related_name='items', null=True)
-
-'''
-
-issues with snippets and manytomany inline
-
-https://docs.wagtail.io/en/v2.7/getting_started/tutorial.html#a-basic-blog 
-https://stackoverflow.com/questions/53512343/is-wagtails-inlinepanel-compatible-w-a-non-page-model
-
-
-https://www.accordbox.com/blog/wagtail-tip-1-how-replace-parentalmanytomanyfield-inlinepanel/
-
-
-
-https://stackoverflow.com/questions/50209851/django-wagtail-admin-handle-many-to-many-with-through
-
-
-Deze lijkt nog wel interessant, maar mss overkill ... 
-https://stackoverflow.com/questions/57453957/render-wagtail-inlinepanel-on-non-page-model-without-using-snippet
-
-'''
-
 
 class DesignItem(Orderable):
     page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='design_items')
+    name = models.CharField(verbose_name='naam', max_length=255)
+    description = models.TextField('beschrijving', default="", blank=True)
+
+DesignItem.panels = [
+    FieldPanel('name'),
+    FieldPanel('description')
+]
+
+class ImplementationItem(Orderable):
+    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='implementation_items')
     name = models.CharField(verbose_name='naam', max_length=255)
     description = models.TextField('beschrijving', default="", blank=True)
 

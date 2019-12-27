@@ -56,9 +56,33 @@
 
       <!-- Part 2 -->
       <div class="tab-pane" id="part2">
-        <div class="row text-center">
+        <div class="row">
           <div class="col-lg-2 offset-lg-4">
-            <p class="text-center">TO DO</p>
+            <div class="nav-tabs-navigation text-right">
+              <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
+                  {% for item in page.implementation_items.all %}
+                  <li class="nav-item">
+                    <a class="nav-link {% if forloop.first %}active{% endif %}" href="#part2{{ forloop.counter }}" role="tab" data-toggle="tab">
+                      <h4>{{ item.name }}</h4>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <!-- Tab panes -->
+            <div class="tab-content">
+              {% for item in page.implementation_items.all %}
+              <div class="tab-pane py-5 {% if forloop.first %}active{% endif %}" id="part2{{ forloop.counter }}">
+                <h5>
+                  {{ item.description }}
+                </h5>
+              </div>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
