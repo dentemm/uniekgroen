@@ -1,11 +1,13 @@
 <div class="d-flex">
   <div class="container-fluid">
+
     <div class="row">
       <div class="col-md-8 offset-md-2 text-center">
         <div class="space-top"></div>
         <h1 class="title">{{ page.section_3_title }}</h1>
       </div>
     </div>
+    
     <ul class="nav nav-pills nav-pills-primary justify-content-center my-5">
       <li class="nav-item">
         <a class="nav-link active" data-toggle="pill" href="#part1" role="tab">
@@ -24,7 +26,9 @@
       <!-- Part 1: Design phase -->
       <div class="tab-pane active" id="part1">
         <div class="row">
-          <div class="col-lg-2 offset-lg-4">
+
+          <!-- LEFT -->
+          <div class="col-6 col-lg-4 offset-lg-2">
             <div class="nav-tabs-navigation text-right">
               <div class="nav-tabs-wrapper">
                 <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
@@ -39,6 +43,8 @@
               </div>
             </div>
           </div>
+
+          <!-- RIGHT -->
           <div class="col-lg-4">
             <!-- Tab panes -->
             <div class="tab-content">
@@ -51,13 +57,17 @@
               {% endfor %}
             </div>
           </div>
+
         </div>
       </div>
+
 
       <!-- Part 2 -->
       <div class="tab-pane" id="part2">
         <div class="row">
-          <div class="col-lg-2 offset-lg-4">
+
+          <!-- LEFT -->
+          <div class="col-6 col-lg-4 offset-lg-2">
             <div class="nav-tabs-navigation text-right">
               <div class="nav-tabs-wrapper">
                 <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
@@ -72,6 +82,8 @@
               </div>
             </div>
           </div>
+
+          <!-- RIGHT -->
           <div class="col-lg-4">
             <!-- Tab panes -->
             <div class="tab-content">
@@ -84,11 +96,11 @@
               {% endfor %}
             </div>
           </div>
+          
         </div>
       </div>
+      <!-- end part 2 -->
 
     </div>
-
-
   </div>
 </div>
