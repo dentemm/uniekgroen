@@ -23,7 +23,7 @@
   {% comment %} <p class="logo-title">Uniek<span class="text-primary">Groen</span></p>
   <p class="logo-subtitle">&nbsp;Tuinarchitectuur & Realisaties<p> {% endcomment %}
 
-  <section>
+  <section class="sticky-nav">
     {% include 'home/sections/nav.html' with page=page %}
   </section>
 
@@ -50,8 +50,10 @@
   </section>
 
   <section>
-    {% include 'home/sections/contact.html' with title='Contacteer ons' %}
+    {% include 'home/sections/contact.html' with title=page.contact_title %}
   </section>
+
+  {% include 'home/sections/footer.html' %}
 
 {% endblock content %}
 

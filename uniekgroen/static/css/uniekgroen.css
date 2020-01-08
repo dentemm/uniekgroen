@@ -44,13 +44,12 @@ h1 {
   height: 100vh;
 }
 
-/* .sticky-nav {
-  position: fixed;
+.sticky-nav {
+  z-index: 1000;
+  position: sticky;
+  position: -webkit-sticky;
   top: 0px;
-  width: 100%;
-  padding-top: 0px;
-  padding-bottom: 0px;
-} */
+}
 
 @keyframes fadingout {
   0% {opacity: 100%;}

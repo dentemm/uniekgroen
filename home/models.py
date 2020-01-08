@@ -82,6 +82,8 @@ class HomePage(Page):
         blank=True
     )
 
+    section_1_description = models.TextField('Informatie', default="", blank=True)
+
     # Section 2: What do we have to offer?
 
     section_2_title = models.CharField(verbose_name='Sectie 2', max_length=64, default='')
@@ -129,6 +131,10 @@ class HomePage(Page):
 
     section_4_title = models.CharField(verbose_name='Sectie 4', max_length=64, default='')
 
+    # Contact
+
+    contact_title = models.CharField(verbose_name='titel', max_length=32, default='Contacteer ons')
+
 
 HomePage.content_panels = Page.content_panels + [
     MultiFieldPanel([
@@ -143,7 +149,8 @@ HomePage.content_panels = Page.content_panels + [
         classname='collapsible'
     ),
     MultiFieldPanel([
-        ImageChooserPanel('section_1_image')
+        ImageChooserPanel('section_1_image'),
+        FieldPanel('section_1_description', classname='col8')
     ], 
         heading='Sectie 1',
         classname='collapsible collapsed'

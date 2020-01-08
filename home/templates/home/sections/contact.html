@@ -1,11 +1,11 @@
-<div class="section section-contactus section-image vh-100" id="contact-us" style="background-image: url('https://moderngarden.co.uk/images/projects/_projectBigImage/Oxshott-0616-copyright-Charlotte-Rowe-1.jpg')">
+<div class="section section-contactus section-image" id="contact-us">
     <!--     *********    CONTACT US 1     *********      -->
     <div class="contactus-1">
       <div class="container">
         <div class="row">
           <div class="col-md-10 ml-auto mr-auto">
-            <div class="card card-contact no-transition">
-              <h1 class="card-title text-center">Contacteer ons</h1>
+            <div class="card card-contact no-transition" data-parallax="true">
+              <h1 class="card-title text-center">{{ title }}</h1>
               <div class="row">
                 <div class="col-md-5 ml-auto">
                   <div class="card-body">
@@ -50,14 +50,14 @@
                         <textarea name="message" class="form-control" id="message" rows="6" placeholder="Boodschap"></textarea>
                       </div>
                       <div class="row">
-                        <div class="col-md-6">
+                        {% comment %} <div class="col-md-6">
                           <div class="form-check">
                             <label class="form-check-label">
                               <input class="form-check-input" type="checkbox" value=""> Ik ben geen robot
                               <span class="form-check-sign"></span>
                             </label>
                           </div>
-                        </div>
+                        </div> {% endcomment %}
                         <div class="col-md-6">
                           <button type="submit" class="btn btn-primary pull-right">Versturen</button>
                         </div>
