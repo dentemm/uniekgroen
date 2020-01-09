@@ -23,33 +23,33 @@
   {% comment %} <p class="logo-title">Uniek<span class="text-primary">Groen</span></p>
   <p class="logo-subtitle">&nbsp;Tuinarchitectuur & Realisaties<p> {% endcomment %}
 
-  <section class="sticky-nav temm">
+  <section class="sticky-nav">
     {% include 'home/sections/nav.html' with page=page %}
   </section>
 
-  <section>
+  <section id="section1">
     {% include 'home/sections/section1.html' with title=page.section_1_title img=page.section_1_image.file.url %}
   </section>
 
   <!-- SECTION 2: WHAT WE DO -->
-  <section>
+  <section id="section2">
     {% include 'home/sections/section2.html' with page=page %}
   </section>
   <section class="snap-child">
     {% include 'home/partials/section2-extra.html' %}
   </section>
 
-  <!-- SECTION 2: HOW WE WORK -->
-  <section>
+  <!-- SECTION 3: HOW WE WORK -->
+  <section id="section3">
     {% include 'home/sections/section3.html' with page=page %}
   </section>
 
-  <!-- SECTION 2: PORTFOLIO -->
-  <section>
+  <!-- SECTION 4: PORTFOLIO -->
+  <section id="section4">
     {% include 'home/sections/section4.html' with title=page.section_4_title %}
   </section>
 
-  <section>
+  <section id="contact">
     {% include 'home/sections/contact.html' with title=page.contact_title %}
   </section>
 
