@@ -7,6 +7,15 @@ h1 {
   background-color: #eeeeee !important;
 }
 
+#section2 .rich-text > p {
+  font-size: 1.6em;
+  line-height: 1.3em;
+}
+
+#section3 .rich-text > p {
+  font-size: 1em;
+}
+
 .opacity-95 {
   opacity: 0.95;
 }

@@ -1,4 +1,4 @@
-{% load static wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 <div class="section bg-dark pt-0">
   <div class="container text-center py-5">
@@ -12,9 +12,9 @@
       <div class="col-xl-4 col-lg-5 col-md-7 bg-primary opacity-95 py-5 px-3">
         <div class="container basic-container height-35">
           <h2 class="category text-white font-weight-bolder">{{ page.section_2_subtitle1 }}</h2>
-          <h4 class="description text-white">
-            {{ page.section_2_description_1 }}
-          </h4>
+          <div class="text-white">
+            {{ page.section_2_desc_1|richtext }}
+          </div>
         </div>
       </div>
     </div>
@@ -27,9 +27,9 @@
       <div class="offset-xl-7 col-xl-4 offset-lg-6 col-lg-5 offset-lg-7 col-lg-4 offset-md-5 col-md-7 bg-dark opacity-95 py-5 px-3">
         <div class="container basic-container height-35">
           <h2 class="category text-white font-weight-bolder">{{ page.section_2_subtitle2 }}</h2>
-          <h4 class="description text-white">
-            {{ page.section_2_description_2 }}
-          </h4>
+          <div class="text-white">
+            {{ page.section_2_desc_2|richtext }}
+          </div>
         </div>
       </div>
     </div>
@@ -42,9 +42,9 @@
       <div class="offset-xl-2 col-xl-4 offset-lg-2 col-lg-5 offset-md-1 col-md-7 bg-gray opacity-95 py-5 px-3">
         <div class="container basic-container height-35">
           <h2 class="category text-dark font-weight-bolder">{{ page.section_2_subtitle3 }}</h2>
-          <h4 class="description text-dark">
-            {{ page.section_2_description_3 }}
-          </h4>
+          <div class="text-dark">
+            {{ page.section_2_desc_3|richtext }}
+          </div>
         </div>
       </div>
     </div>

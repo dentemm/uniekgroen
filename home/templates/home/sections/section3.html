@@ -1,3 +1,5 @@
+{% load wagtailcore_tags %}
+
 <div class="d-flex pt-5">
   <div class="container-fluid">
     <div class="row">
@@ -34,7 +36,7 @@
                   {% for item in page.design_items.all %}
                   <li class="nav-item">
                     <a class="nav-link {% if forloop.first %}active{% endif %}" href="#part1{{ forloop.counter }}" role="tab" data-toggle="tab">
-                      <h4>{{ item.name }}</h4>
+                      <h4 class="mt-3">{{ item.name }}</h4>
                     </a>
                   </li>
                   {% endfor %}
@@ -50,7 +52,7 @@
               {% for item in page.design_items.all %}
               <div class="tab-pane py-5 {% if forloop.first %}active{% endif %}" id="part1{{ forloop.counter }}">
                 <h5>
-                  {{ item.description }}
+                  {{ item.desc|richtext }}
                 </h5>
               </div>
               {% endfor %}
@@ -89,7 +91,7 @@
               {% for item in page.implementation_items.all %}
               <div class="tab-pane py-5 {% if forloop.first %}active{% endif %}" id="part2{{ forloop.counter }}">
                 <h5>
-                  {{ item.description }}
+                  {{ item.desc|richtext }}
                 </h5>
               </div>
               {% endfor %}

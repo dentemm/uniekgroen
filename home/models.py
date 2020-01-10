@@ -89,7 +89,7 @@ class HomePage(Page):
     section_2_title = models.CharField(verbose_name='Sectie 2', max_length=64, default='')
 
     section_2_subtitle1 = models.CharField(verbose_name='Ondertitel 1', max_length=64, default='All-in-one oplossing')
-    section_2_description_1 = models.TextField('Beschrijving 1', default="", blank=True)
+    section_2_desc_1 = RichTextField('Beschrijving 1', blank=True, null=True, features=['h5', 'h6', 'bold', 'italic', 'link', 'hr', 'blockquote'])
     section_2_image_part_1 = models.ForeignKey(
         'wagtailimages.Image',
         verbose_name='Achtergrond 1',
@@ -100,7 +100,7 @@ class HomePage(Page):
     )
 
     section_2_subtitle2 = models.CharField(verbose_name='Ondertitel 2', max_length=64, default='Ontwerpfase')
-    section_2_description_2 = models.TextField('Beschrijving 2', default="", blank=True)
+    section_2_desc_2 = RichTextField('Beschrijving 2', blank=True, null=True, features=['h5', 'h6', 'bold', 'italic', 'link', 'hr', 'blockquote'])
     section_2_image_part_2 = models.ForeignKey(
         'wagtailimages.Image',
         verbose_name='Achtergrond 2',
@@ -111,7 +111,7 @@ class HomePage(Page):
     )
 
     section_2_subtitle3 = models.CharField(verbose_name='Ondertitel 3', max_length=64, default='Realisatie')
-    section_2_description_3 = models.TextField('Beschrijving 1', default="", blank=True)
+    section_2_desc_3 = RichTextField('Beschrijving 3', blank=True, null=True, features=['h5', 'h6', 'bold', 'italic', 'link', 'hr', 'blockquote'])
     section_2_image_part_3 = models.ForeignKey(
         'wagtailimages.Image',
         verbose_name='Achtergrond 3',
@@ -157,20 +157,20 @@ HomePage.content_panels = Page.content_panels + [
     ),
     MultiFieldPanel([
         FieldPanel('section_2_subtitle1', classname='col8'),
-        FieldPanel('section_2_description_1', classname='col8'),
+        FieldPanel('section_2_desc_1', classname='col8'),
         FieldRowPanel([
             ImageChooserPanel('section_2_image_part_1'),
         ]),
         
 
         FieldPanel('section_2_subtitle2', classname='col8'),
-        FieldPanel('section_2_description_2', classname='col8'),
+        FieldPanel('section_2_desc_2', classname='col8'),
         FieldRowPanel([
             ImageChooserPanel('section_2_image_part_2'),
         ]),
 
         FieldPanel('section_2_subtitle3', classname='col8'),
-        FieldPanel('section_2_description_3', classname='col8'),
+        FieldPanel('section_2_desc_3', classname='col8'),
         FieldRowPanel([
             ImageChooserPanel('section_2_image_part_3'),
         ]),
@@ -196,18 +196,20 @@ class DesignItem(Orderable):
     page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='design_items')
     name = models.CharField(verbose_name='naam', max_length=255)
     description = models.TextField('beschrijving', default="", blank=True)
+    desc = RichTextField('Beschrijving', blank=True, null=True, features=['h5', 'h6', 'bold', 'italic', 'link', 'hr', 'blockquote'])
 
 DesignItem.panels = [
     FieldPanel('name'),
-    FieldPanel('description')
+    FieldPanel('desc')
 ]
 
 class ImplementationItem(Orderable):
     page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='implementation_items')
     name = models.CharField(verbose_name='naam', max_length=255)
     description = models.TextField('beschrijving', default="", blank=True)
+    desc = RichTextField('Beschrijving', blank=True, null=True, features=['h5', 'h6', 'bold', 'italic', 'link', 'hr', 'blockquote'])
 
 DesignItem.panels = [
     FieldPanel('name'),
-    FieldPanel('description')
+    FieldPanel('desc')
 ]
