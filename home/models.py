@@ -83,6 +83,8 @@ class HomePage(Page):
     )
 
     section_1_description = models.TextField('Informatie', default="", blank=True)
+    section_1_desc = RichTextField('Informatie', blank=True, null=True, features=['h5', 'h6', 'bold', 'italic', 'link', 'hr', 'blockquote'])
+
 
     # Section 2: What do we have to offer?
 
@@ -121,6 +123,8 @@ class HomePage(Page):
         blank=True
     )
 
+    section_2_extra = models.CharField(verbose_name='Tekst', max_length=64, null=True)
+
     # Section 3: How do we work?
 
     section_3_title = models.CharField(verbose_name='Sectie 3', max_length=64, default='')
@@ -150,7 +154,8 @@ HomePage.content_panels = Page.content_panels + [
     ),
     MultiFieldPanel([
         ImageChooserPanel('section_1_image'),
-        FieldPanel('section_1_description', classname='col8')
+        FieldPanel('section_1_description', classname='col8'),
+        FieldPanel('section_1_desc', classname='col8')
     ], 
         heading='Sectie 1',
         classname='collapsible collapsed'
@@ -162,7 +167,6 @@ HomePage.content_panels = Page.content_panels + [
             ImageChooserPanel('section_2_image_part_1'),
         ]),
         
-
         FieldPanel('section_2_subtitle2', classname='col8'),
         FieldPanel('section_2_desc_2', classname='col8'),
         FieldRowPanel([
@@ -176,6 +180,12 @@ HomePage.content_panels = Page.content_panels + [
         ]),
     ], 
         heading='Sectie 2',
+        classname='collapsible collapsed'
+    ),
+    MultiFieldPanel([
+        FieldPanel('section_2_extra', classname='col8')
+    ],
+        heading='Sectie 2 - tussen tekst',
         classname='collapsible collapsed'
     ),
     MultiFieldPanel([

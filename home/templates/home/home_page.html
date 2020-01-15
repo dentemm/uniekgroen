@@ -28,7 +28,7 @@
   </section>
 
   <section id="section1">
-    {% include 'home/sections/section1.html' with title=page.section_1_title img=page.section_1_image.file.url %}
+    {% include 'home/sections/section1.html' with page=page %}
   </section>
 
   <!-- SECTION 2: WHAT WE DO -->
@@ -36,7 +36,7 @@
     {% include 'home/sections/section2.html' with page=page %}
   </section>
   <section id="section2-extra" class="pb-5 bg-dark">
-    {% include 'home/partials/section2-extra.html' %}
+    {% include 'home/partials/section2-extra.html' with text=page.section_2_extra %}
   </section>
 
   <!-- SECTION 3: HOW WE WORK -->

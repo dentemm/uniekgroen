@@ -7,7 +7,7 @@ h1 {
   background-color: #eeeeee !important;
 }
 
-#section2 .rich-text > p {
+#section2 .rich-text > p, #section1 .rich-text > p {
   font-size: 1.6em;
   line-height: 1.3em;
 }

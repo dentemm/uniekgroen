@@ -1,3 +1,5 @@
+{% load wagtailcore_tags %}
+
 <div class="section">
   <div class="container-fluid">
     <div class="row">
@@ -5,11 +7,11 @@
         {% comment %} <img class="img-fluid mt-5" src="https://st3.depositphotos.com/15601592/18792/i/1600/depositphotos_187920938-stock-photo-full-length-portrait-two-male.jpg"/> {% endcomment %}
       </div>
       <div class="col-md-5 text-center bg-primary">
-        <div class="bg-primary">
-          <h1 class="title text-white">{{ title }}</h1>
-          <h5 class="description text-white px-5 pb-5">
-            {{ title }}
-          </h5>
+        <div class="bg-primary text-white">
+          <h1 class="title text-white">{{ page.section_1_title }}</h1>
+          <p class="description px-5 py-0">
+            {{ page.section_1_desc|richtext }}
+          </p>
           <br/>
           <br/>
           <br/>
@@ -27,7 +29,7 @@
     <div class="row">
       <div class="offset-md-1 col-md-6">
         <div style="position: absolute; top: -50vh;">
-          <img class="img-fluid mt-5" src="{{ img }}"/>
+          <img class="img-fluid mt-5" src="{{ page.section_1_image.file.url }}"/>
         <div>
       </div>
     </div>
