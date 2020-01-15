@@ -209,7 +209,7 @@ class ImplementationItem(Orderable):
     description = models.TextField('beschrijving', default="", blank=True)
     desc = RichTextField('Beschrijving', blank=True, null=True, features=['h5', 'h6', 'bold', 'italic', 'link', 'hr', 'blockquote'])
 
-DesignItem.panels = [
+ImplementationItem.panels = [
     FieldPanel('name'),
     FieldPanel('desc')
 ]
