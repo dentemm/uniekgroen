@@ -43,6 +43,9 @@
   <section id="section3">
     {% include 'home/sections/section3.html' with page=page %}
   </section>
+  <section id="section3-extra" class="bg-dark">
+    {% include 'home/partials/section3-extra.html' with text=page.section_3_extra %}
+  </section>
 
   <!-- SECTION 4: PORTFOLIO -->
   <section id="section4">

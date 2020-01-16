@@ -13,10 +13,14 @@ h1 {
 }
 
 #section2-extra {
+  z-index: -2;
+}
+
+#section3-extra {
   z-index: -1;
 }
 
-#section3 {
+#section3, #section4 {
   position: relative;
   z-index: 10;
 }

@@ -6,11 +6,13 @@ window.onload = function () {
     let icons = $('.sticky-nav').find('div.icon');
 
     let text1 = $('#text-1');
+    let text2 = $('#text-2');
 
     let current = 0;
 
     const navbarDist = $('.sticky-nav').offset().top;
     let text1Dist = $('#section2-extra').offset().top;
+    let text2Dist = $('#section3-extra').offset().top;
 
     let canMove = true;
     // const isChrome = !!window.chrome;
@@ -28,6 +30,7 @@ window.onload = function () {
             canMove = true;
         }
         text1Dist = $('#section2-extra').offset().top;
+        text2Dist = $('#section3-extra').offset().top;
     }
 
     const onScroll = () => {
@@ -53,10 +56,15 @@ window.onload = function () {
         current = $(this).scrollTop();  
 
         const text1Diff = current - text1Dist;
+        const text2Diff = current - text2Dist;
         
         /* TEXT 1 */
         if (text1Diff > 0) {
             text1.css('top', `${text1Diff}px`);
+        }
+
+        if (text2Diff > 0) {
+            text2.css('top', `${text2Diff}px`);
         } 
 
         previous = $(this).scrollTop();

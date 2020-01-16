@@ -129,7 +129,9 @@ class HomePage(Page):
 
     section_3_title = models.CharField(verbose_name='Sectie 3', max_length=64, default='')
 
-    # design_items = ParentalManyToManyField('home.GenericItem', blank=True)
+    section_3_extra = models.CharField(verbose_name='Tekst', max_length=64, null=True)
+
+
 
     # Section 4: Portfolio
 
@@ -198,6 +200,12 @@ HomePage.content_panels = Page.content_panels + [
         InlinePanel('implementation_items')
     ], 
         heading='Sectie 3 - realisatie traject',
+        classname='collapsible collapsed'
+    ),
+    MultiFieldPanel([
+        FieldPanel('section_3_extra', classname='col8')
+    ],
+        heading='Sectie 3 - tussen tekst',
         classname='collapsible collapsed'
     ),
 ]
