@@ -123,13 +123,13 @@ class HomePage(Page):
         blank=True
     )
 
-    section_2_extra = models.CharField(verbose_name='Tekst', max_length=64, null=True)
+    section_2_extra = models.CharField(verbose_name='Tekst', max_length=128, null=True)
 
     # Section 3: How do we work?
 
     section_3_title = models.CharField(verbose_name='Sectie 3', max_length=64, default='')
 
-    section_3_extra = models.CharField(verbose_name='Tekst', max_length=64, null=True)
+    section_3_extra = models.CharField(verbose_name='Tekst', max_length=128, null=True)
 
 
 
