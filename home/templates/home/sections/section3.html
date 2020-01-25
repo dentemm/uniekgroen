@@ -75,7 +75,7 @@
                   {% for item in page.implementation_items.all %}
                   <li class="nav-item">
                     <a class="nav-link {% if forloop.first %}active{% endif %}" href="#part2{{ forloop.counter }}" role="tab" data-toggle="tab">
-                      <h4>{{ item.name }}</h4>
+                      <h4 class="mt-3">{{ item.name }}</h4>
                     </a>
                   </li>
                   {% endfor %}

@@ -7,6 +7,10 @@ h1 {
   background-color: #eeeeee !important;
 }
 
+img.fade-animation {
+  width: 100%;
+}
+
 #section2 .rich-text > p, #section1 .rich-text > p {
   font-size: 1.6em;
   line-height: 1.3em;
