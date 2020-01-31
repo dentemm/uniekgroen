@@ -1,5 +1,29 @@
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 400;
+  src: local('temm'),
+       url('../fonts/temm.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'GothamLight';
+  font-weight: 300;
+  src: local('temmlight'),
+       url('../fonts/temmlight.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'GothamBold';
+  font-weight: 600;
+  src: local('temmbold'),
+       url('../fonts/temmbold.otf') format("opentype");
+}
+
+* {
+  font-family: GothamLight !important;
+}
+
 h1 {
-  font-size: 5em;
   font-weight: 500;
 }
 
@@ -33,8 +57,8 @@ img.fade-animation {
   font-size: 1em;
 }
 
-.opacity-95 {
-  opacity: 0.95;
+.opacity-85 {
+  opacity: 0.85;
 }
 
 .height-25 {
