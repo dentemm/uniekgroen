@@ -68,7 +68,6 @@ WebsiteSettings.panels = [
     )
 ]
 
-
 class HomePage(Page):
 
     # Section 1: Who are we? 
@@ -87,7 +86,6 @@ class HomePage(Page):
 
 
     # Section 2: What do we have to offer?
-
     section_2_title = models.CharField(verbose_name='Sectie 2', max_length=64, default='')
 
     section_2_subtitle1 = models.CharField(verbose_name='Ondertitel 1', max_length=64, default='All-in-one oplossing')
@@ -124,13 +122,27 @@ class HomePage(Page):
     )
 
     section_2_extra = models.CharField(verbose_name='Tekst', max_length=128, null=True)
+    section_2_extra_image = models.ForeignKey(
+        'wagtailimages.Image',
+        verbose_name='Achtergrond',
+        on_delete=models.SET_NULL,
+        related_name='+',
+        null=True,
+        blank=True
+    )
 
     # Section 3: How do we work?
-
     section_3_title = models.CharField(verbose_name='Sectie 3', max_length=64, default='')
 
     section_3_extra = models.CharField(verbose_name='Tekst', max_length=128, null=True)
-
+    section_3_extra_image = models.ForeignKey(
+        'wagtailimages.Image',
+        verbose_name='Achtergrond',
+        on_delete=models.SET_NULL,
+        related_name='+',
+        null=True,
+        blank=True
+    )
 
 
     # Section 4: Portfolio
@@ -185,7 +197,8 @@ HomePage.content_panels = Page.content_panels + [
         classname='collapsible collapsed'
     ),
     MultiFieldPanel([
-        FieldPanel('section_2_extra', classname='col8')
+        FieldPanel('section_2_extra', classname='col8'),
+        ImageChooserPanel('section_2_extra_image', classname='col8')
     ],
         heading='Sectie 2 - tussen tekst',
         classname='collapsible collapsed'
@@ -203,7 +216,8 @@ HomePage.content_panels = Page.content_panels + [
         classname='collapsible collapsed'
     ),
     MultiFieldPanel([
-        FieldPanel('section_3_extra', classname='col8')
+        FieldPanel('section_3_extra', classname='col8'),
+        ImageChooserPanel('section_3_extra_image', classname='col8')
     ],
         heading='Sectie 3 - tussen tekst',
         classname='collapsible collapsed'
