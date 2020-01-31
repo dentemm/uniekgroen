@@ -2,8 +2,8 @@ window.onload = function () {
 
     /* ELEMENTS TO CHANGE */
     let navbar = $('.sticky-nav>div').first();
-    let titles = $('.sticky-nav').find('div.description');
-    let icons = $('.sticky-nav').find('div.icon');
+    // let titles = $('.sticky-nav').find('div.description');
+    // let icons = $('.sticky-nav').find('div.icon');
 
     let text1 = $('#text-1');
     let text2 = $('#text-2');
@@ -17,21 +17,21 @@ window.onload = function () {
     let canMove = true;
     // const isChrome = !!window.chrome;
 
-    const updateNavbar = (shouldRemove) => {
+    // const updateNavbar = (shouldRemove) => {
         
-        if (shouldRemove === true) {
-            navbar.removeClass('py-5');
-            titles.attr('hidden', true);
-            icons.addClass('icon-sm');
-        } else if (shouldRemove === false) {
-            navbar.addClass('py-5');
-            titles.attr('hidden', false);
-            icons.removeClass('icon-sm');
-            canMove = true;
-        }
-        text1Dist = $('#section2-extra').offset().top;
-        text2Dist = $('#section3-extra').offset().top;
-    }
+    //     if (shouldRemove === true) {
+    //         navbar.removeClass('py-5');
+    //         titles.attr('hidden', true);
+    //         icons.addClass('icon-sm');
+    //     } else if (shouldRemove === false) {
+    //         navbar.addClass('py-5');
+    //         titles.attr('hidden', false);
+    //         icons.removeClass('icon-sm');
+    //         canMove = true;
+    //     }
+    //     text1Dist = $('#section2-extra').offset().top;
+    //     text2Dist = $('#section3-extra').offset().top;
+    // }
 
     const onScroll = () => {
 
