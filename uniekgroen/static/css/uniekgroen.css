@@ -1,26 +1,26 @@
 @font-face {
   font-family: 'Gotham';
-  font-weight: 400;
+  font-weight: 500;
   src: local('temm'),
        url('../fonts/temm.otf') format("opentype");
 }
 
 @font-face {
-  font-family: 'GothamLight';
+  font-family: 'Gotham';
   font-weight: 300;
   src: local('temmlight'),
        url('../fonts/temmlight.otf') format("opentype");
 }
 
 @font-face {
-  font-family: 'GothamBold';
-  font-weight: 600;
+  font-family: 'Gotham';
+  font-weight: 700;
   src: local('temmbold'),
        url('../fonts/temmbold.otf') format("opentype");
 }
 
 * {
-  font-family: GothamLight !important;
+  font-family: Gotham !important;
 }
 
 h1 {
