@@ -1,7 +1,7 @@
 window.onload = function () {
 
     /* ELEMENTS TO CHANGE */
-    let navbar = $('.sticky-nav>div').first();
+    // let navbar = $('.sticky-nav>div').first();
     // let titles = $('.sticky-nav').find('div.description');
     // let icons = $('.sticky-nav').find('div.icon');
 
@@ -10,7 +10,7 @@ window.onload = function () {
 
     let current = 0;
 
-    const navbarDist = $('.sticky-nav').offset().top;
+    // const navbarDist = $('.sticky-nav').offset().top;
     let text1Dist = $('#section2-extra').offset().top;
     let text2Dist = $('#section3-extra').offset().top;
 
@@ -36,24 +36,24 @@ window.onload = function () {
     const onScroll = () => {
 
         current = $(this).scrollTop();
-        const navbarDiff = current - navbarDist;
+        // const navbarDiff = current - navbarDist;
         
 
         /* NAVBAR */
-        if (navbar.hasClass('py-5') && navbarDiff > 0) {
+        // if (navbar.hasClass('py-5') && navbarDiff > 0) {
             
-            updateNavbar(true);
+        //     updateNavbar(true);
 
-            if (canMove) {
-                $(this).scrollTop(navbarDist);
-                canMove = false;
-            }
+        //     if (canMove) {
+        //         $(this).scrollTop(navbarDist);
+        //         canMove = false;
+        //     }
 
-        } else if (!navbar.hasClass('py-5') && navbarDiff < 0) {
-            updateNavbar(false);
-        }
+        // } else if (!navbar.hasClass('py-5') && navbarDiff < 0) {
+        //     updateNavbar(false);
+        // }
 
-        current = $(this).scrollTop();  
+        // current = $(this).scrollTop();  
 
         const text1Diff = current - text1Dist;
         const text2Diff = current - text2Dist;
