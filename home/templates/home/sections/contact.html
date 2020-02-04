@@ -1,13 +1,13 @@
-<div class="section section-contactus section-image" id="contact-us">
+<div id="contact-us">
     <!--     *********    CONTACT US 1     *********      -->
     <div class="contactus-1">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 ml-auto mr-auto">
-            <div class="card card-contact no-transition" data-parallax="true">
+          <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+            <div class="card card-contact no-transition">
               <h1 class="card-title text-center">{{ title|upper }}</h1>
-              <div class="row">
-                <div class="col-md-5 ml-auto">
+              <div class="row mt-3">
+                {% comment %} <div class="col-md-5 ml-auto">
                   <div class="card-body">
                     <div class="info info-horizontal">
                       <div class="icon icon-info">
@@ -33,21 +33,21 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-md-5 mr-auto">
+                </div> {% endcomment %}
+                <div class="col-md-10 offset-md-1 mr-auto">
                   <form role="form" id="contact-form" method="post">
                     <div class="card-body">
                      <div class="form-group label-floating">
-                        <label class="control-label">Naam</label>
-                        <input type="email" name="email" class="form-control" placeholder="Naam">
+                        {% comment %} <label class="control-label">Naam</label> {% endcomment %}
+                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Naam">
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label">Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        {% comment %} <label class="control-label">Email</label> {% endcomment %}
+                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Email">
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label">Boodschap</label>
-                        <textarea name="message" class="form-control" id="message" rows="6" placeholder="Boodschap"></textarea>
+                        {% comment %} <label class="control-label">Boodschap</label> {% endcomment %}
+                        <textarea name="message" class="form-control form-control-lg" id="message" rows="6" placeholder="Boodschap" style="height: auto"></textarea>
                       </div>
                       <div class="row">
                         {% comment %} <div class="col-md-6">
@@ -72,4 +72,7 @@
       </div>
     </div>
     <!--     *********    END CONTACT US 1      *********      -->
+  </div>
+
+  <div>
   </div>
