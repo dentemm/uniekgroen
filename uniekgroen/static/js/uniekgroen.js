@@ -1,59 +1,35 @@
 window.onload = function () {
 
     /* ELEMENTS TO CHANGE */
-    // let navbar = $('.sticky-nav>div').first();
-    // let titles = $('.sticky-nav').find('div.description');
-    // let icons = $('.sticky-nav').find('div.icon');
+    let navbar = $('#nav')
 
     let text1 = $('#text-1');
     let text2 = $('#text-2');
 
     let current = 0;
 
-    // const navbarDist = $('.sticky-nav').offset().top;
+    const navbarDist = navbar.offset().top;
     let text1Dist = $('#section2-extra').offset().top;
     let text2Dist = $('#section3-extra').offset().top;
-
-    let canMove = true;
-    // const isChrome = !!window.chrome;
-
-    // const updateNavbar = (shouldRemove) => {
-        
-    //     if (shouldRemove === true) {
-    //         navbar.removeClass('py-5');
-    //         titles.attr('hidden', true);
-    //         icons.addClass('icon-sm');
-    //     } else if (shouldRemove === false) {
-    //         navbar.addClass('py-5');
-    //         titles.attr('hidden', false);
-    //         icons.removeClass('icon-sm');
-    //         canMove = true;
-    //     }
-    //     text1Dist = $('#section2-extra').offset().top;
-    //     text2Dist = $('#section3-extra').offset().top;
-    // }
 
     const onScroll = () => {
 
         current = $(this).scrollTop();
-        // const navbarDiff = current - navbarDist;
-        
+        const navbarDiff = current - navbarDist;
+
+        console.log('*** ' + navbarDiff);
 
         /* NAVBAR */
-        // if (navbar.hasClass('py-5') && navbarDiff > 0) {
-            
-        //     updateNavbar(true);
+        if (navbarDiff >= 0) {
+            navbar.removeClass('bg-dark');
+            navbar.css('background-color', 'rgba(52, 58, 64, 0.5)');
 
-        //     if (canMove) {
-        //         $(this).scrollTop(navbarDist);
-        //         canMove = false;
-        //     }
-
-        // } else if (!navbar.hasClass('py-5') && navbarDiff < 0) {
-        //     updateNavbar(false);
-        // }
-
-        // current = $(this).scrollTop();  
+        } else {
+            if (!navbar.hasClass('bg-dark')) {
+                navbar.addClass('bg-dark');
+                navbar.removeAttr('style');
+            }
+        }
 
         const text1Diff = current - text1Dist;
         const text2Diff = current - text2Dist;
@@ -69,30 +45,6 @@ window.onload = function () {
 
         previous = $(this).scrollTop();
     };
-
-    // const throttle = (func, limit) => {
-    //     let lastFunc;
-    //     let lastRan;
-
-    //     return function() {
-    //         const context = this;
-    //         const args = arguments;
-
-    //         if (!lastRan) {
-    //             func.apply(context, args);
-    //             lastRan = Date.now();
-
-    //         } else {
-    //             clearTimeout(lastFunc);
-    //             lastFunc = setTimeout(function() {
-    //                 if ((Date.now() - lastRan) >= limit) {
-    //                     func.apply(context, args)
-    //                     lastRan = Date.now()
-    //                 }
-    //             }, limit - (Date.now() - lastRan));
-    //         }
-    //     }
-    // };
 
     $(window).scroll(onScroll);
     // $(window).scroll(throttle(onScroll, 50));

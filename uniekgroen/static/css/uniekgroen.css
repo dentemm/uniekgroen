@@ -57,6 +57,10 @@ img.fade-animation {
   font-size: 1em;
 }
 
+.opacity-20 {
+  opacity: 0.20;
+}
+
 .opacity-85 {
   opacity: 0.85;
 }
