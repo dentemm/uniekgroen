@@ -22,7 +22,7 @@ window.onload = function () {
         /* NAVBAR */
         if (navbarDiff >= 0) {
             navbar.removeClass('bg-dark');
-            navbar.css('background-color', 'rgba(52, 58, 64, 0.5)');
+            navbar.css('background-color', 'rgba(52, 58, 64, 0.6)');
 
         } else {
             if (!navbar.hasClass('bg-dark')) {
