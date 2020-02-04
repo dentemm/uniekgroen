@@ -17,8 +17,6 @@ window.onload = function () {
         current = $(this).scrollTop();
         const navbarDiff = current - navbarDist;
 
-        console.log('*** ' + navbarDiff);
-
         /* NAVBAR */
         if (navbarDiff >= 0) {
             navbar.removeClass('bg-dark');
@@ -47,6 +45,5 @@ window.onload = function () {
     };
 
     $(window).scroll(onScroll);
-    // $(window).scroll(throttle(onScroll, 50));
 };
 

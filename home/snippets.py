@@ -1,4 +1,5 @@
 import geopy
+import ssl
 
 from django.db import models
 
