@@ -8,19 +8,36 @@
         <h1 class="title">{{ page.section_3_title|upper }}</h1>
       </div>
     </div>
-    
-    <ul class="nav nav-pills nav-pills-primary justify-content-center my-5">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#part1" role="tab">
-          <h3 class="my-0 px-5">Ontwerp traject</h3>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#part2" role="tab">
-          <h3 class="my-0 px-5">Realisatie traject</h3>
-        </a>
-      </li>
-    </ul>
+
+    <div class="d-none d-md-block"> 
+      <ul class="nav nav-pills nav-pills-primary justify-content-center my-5">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="pill" href="#part1" role="tab">
+            <h3 class="my-0 px-5">Ontwerp traject</h3>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="#part2" role="tab">
+            <h3 class="my-0 px-5">Realisatie traject</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="d-block d-md-none"> 
+      <ul class="nav nav-pills nav-pills-primary justify-content-center my-5">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="pill" href="#part1" role="tab">
+            <h3 class="my-0 px-1">Ontwerp traject</h3>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="#part2" role="tab">
+            <h3 class="my-0 px-1">Realisatie traject</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <div class="tab-content">
 
@@ -29,7 +46,7 @@
         <div class="row">
 
           <!-- LEFT -->
-          <div class="col-6 col-lg-4 offset-lg-2">
+          <div class="col-md-6 col-lg-4 offset-lg-2">
             <div class="nav-tabs-navigation text-right">
               <div class="nav-tabs-wrapper">
                 <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
@@ -46,7 +63,7 @@
           </div>
 
           <!-- RIGHT -->
-          <div class="col-lg-4">
+          <div class="d-none d-md-block col-md-6 col-lg-4">
             <!-- Tab panes -->
             <div class="tab-content">
               {% for item in page.design_items.all %}
@@ -68,7 +85,7 @@
         <div class="row">
 
           <!-- LEFT -->
-          <div class="col-6 col-lg-4 offset-lg-2">
+          <div class="col-md-6 col-lg-4 offset-lg-2">
             <div class="nav-tabs-navigation text-right">
               <div class="nav-tabs-wrapper">
                 <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
@@ -85,7 +102,7 @@
           </div>
 
           <!-- RIGHT -->
-          <div class="col-lg-4">
+          <div class="d-none d-md-block col-md-6 col-lg-4">
             <!-- Tab panes -->
             <div class="tab-content">
               {% for item in page.implementation_items.all %}
