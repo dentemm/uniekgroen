@@ -1,78 +1,39 @@
+
 <div id="contact-us">
-    <!--     *********    CONTACT US 1     *********      -->
-    <div class="contactus-1">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-            <div class="card card-contact no-transition">
-              <h1 class="card-title text-center">{{ title|upper }}</h1>
-              <div class="row mt-3">
-                {% comment %} <div class="col-md-5 ml-auto">
+  <div class="contactus-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+        <div class="card text-white mb-3">
+          <div class="card-header bg-primary">
+            <h1 class="card-title text-white text-center">{{ title|upper }}</h1>
+          </div>
+            <div class="card-body">
+              <div class="col-md-10 offset-md-1 mr-auto">
+                <form role="form" id="contact-form" method="post">
                   <div class="card-body">
-                    <div class="info info-horizontal">
-                      <div class="icon icon-info">
-                        <i class="nc-icon nc-pin-3" aria-hidden="true"></i>
-                      </div>
-                      <div class="description">
-                        <h4 class="info-title">Ons kantoor</h4>
-                        <p> Top ingenieur straat 28
-                          <br> Ergens in Limburg
-                        </p>
-                      </div>
+                    <div class="form-group label-floating">
+                      <input type="email" name="email" class="form-control form-control-lg" placeholder="Naam">
                     </div>
-                    <div class="info info-horizontal">
-                      <div class="icon icon-danger">
-                        <i class="nc-icon nc-badge" aria-hidden="true"></i>
-                      </div>
-                      <div class="description">
-                        <h4 class="info-title">Telefoon</h4>
-                        <p> Top Ingenieur
-                          <br> +32 479 348 347
-                          <br> Ma - Vrij, 8:00-22:00
-                        </p>
+                    <div class="form-group label-floating">
+                      <input type="email" name="email" class="form-control form-control-lg" placeholder="Email">
+                    </div>
+                    <div class="form-group label-floating">
+                      <textarea name="message" class="form-control form-control-lg" id="message" rows="6" placeholder="Boodschap" style="height: auto"></textarea>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <button type="submit" class="btn btn-lg btn-primary">Versturen</button>
                       </div>
                     </div>
                   </div>
-                </div> {% endcomment %}
-                <div class="col-md-10 offset-md-1 mr-auto">
-                  <form role="form" id="contact-form" method="post">
-                    <div class="card-body">
-                     <div class="form-group label-floating">
-                        {% comment %} <label class="control-label">Naam</label> {% endcomment %}
-                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Naam">
-                      </div>
-                      <div class="form-group label-floating">
-                        {% comment %} <label class="control-label">Email</label> {% endcomment %}
-                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Email">
-                      </div>
-                      <div class="form-group label-floating">
-                        {% comment %} <label class="control-label">Boodschap</label> {% endcomment %}
-                        <textarea name="message" class="form-control form-control-lg" id="message" rows="6" placeholder="Boodschap" style="height: auto"></textarea>
-                      </div>
-                      <div class="row">
-                        {% comment %} <div class="col-md-6">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value=""> Ik ben geen robot
-                              <span class="form-check-sign"></span>
-                            </label>
-                          </div>
-                        </div> {% endcomment %}
-                        <div class="col-md-6">
-                          <button type="submit" class="btn btn-primary pull-right">Versturen</button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
+        </div>
       </div>
     </div>
-    <!--     *********    END CONTACT US 1      *********      -->
   </div>
-
-  <div>
-  </div>
+</div>
