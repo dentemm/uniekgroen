@@ -108,6 +108,10 @@ img.fade-animation {
   min-height: 100%;
 }
 
+.navbar-collapse h4 {
+  margin: 5px 0 0;
+}
+
 .nav-link.active > h4 {
   color: #86c66e !important;
   font-weight: 700 !important;

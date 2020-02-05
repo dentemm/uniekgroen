@@ -1,4 +1,4 @@
-<div id="nav" class="d-flex bg-dark">
+<div id="**nav" class="d-flex bg-dark">
   <div class="flex-fill">
     <a href="#section1">
     <div class="info py-3">
@@ -48,3 +48,38 @@
     </a>
   </div>
 </div>
+
+<nav id="nav" class="navbar navbar-expand-lg bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav text-white flex-fill">
+      <li class="nav-item">
+        <a class="nav-link" href="#section2">
+          <h4 class="info-title text-white">{{ page.section_1_title }}</h4>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section2">
+          <h4 class="info-title text-white">{{ page.section_2_title }}</h4>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section3">
+          <h4 class="info-title text-white">{{ page.section_3_title }}</h4>
+        </a>
+      </li>
+      {% comment %} <li class="nav-item">
+        <a class="nav-link" href="#section3">
+          <h4 class="info-title text-white"><b>{{ page.section_4_title }}</b></h4>
+        </a>
+      </li> {% endcomment %}
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">
+          <h4 class="info-title text-white">Contact</h4>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
