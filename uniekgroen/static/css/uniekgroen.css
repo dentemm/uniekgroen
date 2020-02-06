@@ -201,6 +201,7 @@ img.fade-animation {
 
 /* REVEAL ANIMATION  */
 
+/*
 .reveal::after{
   content: '';
   position: absolute;
@@ -233,4 +234,16 @@ img.fade-animation {
 @keyframes a-ltr-before{
   0% {transform: translateX(0)}
   100% {transform: translateX(200%)}
+} */
+
+
+@media (max-width: 991px) {
+
+  ul.nav {
+    display: block;
+  }
+
+  .nav-justified .nav-item {
+    text-align: left;
+  }
 }
