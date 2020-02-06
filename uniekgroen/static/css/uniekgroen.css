@@ -72,6 +72,7 @@ img.fade-animation {
 
 #section3 .rich-text > p {
   font-size: 1em;
+  padding-left: 0.6rem !important;
 }
 
 #contact {
@@ -210,6 +211,28 @@ img.fade-animation {
   scroll-snap-align: end;
 }
 
+#section3 .nav-tabs-navigation:last-child .nav-stacked {
+  padding-top: 0px !important;
+}
+
+.tab-content.inner > .tab-pane.active {
+  animation: slide-from-right 0.4s ease-out;
+}
+
+.tab-content.outer > .tab-pane.active {
+  animation: slide-from-bottom 0.6s ease-out;
+}
+
+@keyframes slide-from-right {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slide-from-bottom {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 @media (max-width: 991px) {
 
   #nav ul.nav {
@@ -219,14 +242,6 @@ img.fade-animation {
   .nav-justified .nav-item {
     text-align: left;
   }
-}
-
-#section3 .nav-tabs-navigation:last-child .nav-stacked {
-  padding-top: 0px !important;
-}
-
-#section3 .richtext p {
-  padding-left: .6rem !important;
 }
 
 @media (max-width: 768px) {

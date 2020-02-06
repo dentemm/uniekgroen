@@ -41,7 +41,7 @@
       </ul>
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content outer">
 
       <!-- Part 1: Design phase -->
       <div class="tab-pane active" id="part1">
@@ -67,7 +67,7 @@
           <!-- RIGHT -->
           <div class="d-none d-md-block col-md-6 col-lg-4">
             <!-- Tab panes -->
-            <div class="tab-content">
+            <div class="tab-content inner">
               {% for item in page.design_items.all %}
               <div class="tab-pane pb-5 pt-1 {% if forloop.first %}active{% endif %}" id="part1{{ forloop.counter }}">
                 <h5>
@@ -106,7 +106,7 @@
           <!-- RIGHT -->
           <div class="d-none d-md-block col-md-6 col-lg-4">
             <!-- Tab panes -->
-            <div class="tab-content">
+            <div class="tab-content inner">
               {% for item in page.implementation_items.all %}
               <div class="tab-pane pb-5 pt-1 {% if forloop.first %}active{% endif %}" id="part2{{ forloop.counter }}">
                 <h5>
