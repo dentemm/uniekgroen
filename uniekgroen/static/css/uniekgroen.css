@@ -221,6 +221,10 @@ img.fade-animation {
   }
 }
 
+#section3 .nav-tabs-navigation:last-child .nav-stacked {
+  padding-top: 0px !important;
+}
+
 @media (max-width: 768px) {
 
   #section3 .nav-tabs-navigation {
