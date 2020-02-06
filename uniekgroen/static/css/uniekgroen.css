@@ -225,6 +225,10 @@ img.fade-animation {
   padding-top: 0px !important;
 }
 
+#section3 .richtext p {
+  padding-left: .6rem !important;
+}
+
 @media (max-width: 768px) {
 
   #section3 .nav-tabs-navigation {
