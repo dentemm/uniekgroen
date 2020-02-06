@@ -11,13 +11,13 @@
 
     <!-- for md / lg / xl-->
     <div class="d-none d-md-block"> 
-      <ul class="nav nav-pills nav-pills-primary justify-content-center my-5">
-        <li class="nav-item">
+      <ul class="nav justify-content-center my-5">
+        <li class="nav-item ug-nav mx-3">
           <a class="nav-link active" data-toggle="pill" href="#part1" role="tab">
             <h3 class="my-0 px-5">Ontwerp traject</h3>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ug-nav mx-3">
           <a class="nav-link" data-toggle="pill" href="#part2" role="tab">
             <h3 class="my-0 px-5">Realisatie traject</h3>
           </a>
@@ -27,15 +27,15 @@
 
     <!-- for xs / sm -->
     <div class="d-block d-md-none"> 
-      <ul class="nav nav-pills nav-pills-primary justify-content-center my-5">
-        <li class="nav-item">
+      <ul class="nav justify-content-center my-5">
+        <li class="nav-item ug-nav mx-3">
           <a class="nav-link active" data-toggle="pill" href="#part1" role="tab">
-            <h3 class="my-0 px-1">Ontwerp traject</h3>
+            <h3 class="text-center my-0 px-2">Ontwerp traject</h3>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ug-nav mx-3">
           <a class="nav-link" data-toggle="pill" href="#part2" role="tab">
-            <h3 class="my-0 px-1">Realisatie traject</h3>
+            <h3 class="text-center my-0 px-2">Realisatie traject</h3>
           </a>
         </li>
       </ul>
@@ -48,9 +48,9 @@
         <div class="row">
 
           <!-- LEFT -->
-          <div class="col-md-6 col-lg-4 offset-lg-2">
+          <div class="col-md-6 col-lg-4 offset-lg-2 pr-0">
             <div class="nav-tabs-navigation text-right">
-              <div class="nav-tabs-wrapper">
+              <div class="nav-tabs-wrapper mr-0">
                 <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
                   {% for item in page.design_items.all %}
                   <li class="nav-item">

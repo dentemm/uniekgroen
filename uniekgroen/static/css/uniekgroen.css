@@ -187,6 +187,17 @@ img.fade-animation {
   -webkit-animation-fill-mode: forwards;
 }
 
+.ug-nav a.nav-link {
+  color: #86c66e !important;
+  border: 2px solid #86c66e !important;
+}
+
+.ug-nav a.nav-link.active {
+  color: white !important;
+  background-color: #86c66e !important;
+
+}
+
 .snap-parent {
   scroll-snap-type: y proximity;
 }
@@ -199,51 +210,24 @@ img.fade-animation {
   scroll-snap-align: end;
 }
 
-/* REVEAL ANIMATION  */
-
-/*
-.reveal::after{
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: #86c66e;
-  animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
-  transform: translateX(-101%);
-}
-
-.reveal::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--bg-color);
-  animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
-  transform: translateX(0);
-}
-
-@keyframes a-ltr-after{
-  0% {transform: translateX(-100%)}
-  100% {transform: translateX(101%)}
-}
-
-@keyframes a-ltr-before{
-  0% {transform: translateX(0)}
-  100% {transform: translateX(200%)}
-} */
-
-
 @media (max-width: 991px) {
 
-  ul.nav {
+  #nav ul.nav {
     display: block;
   }
 
   .nav-justified .nav-item {
     text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #section3 .nav-tabs-navigation {
+    padding-right: 10em !important;
+  }
+
+  #section3 .nav-tabs-navigation:last-child .nav-stacked {
+    border: none;
   }
 }
