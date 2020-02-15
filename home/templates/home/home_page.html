@@ -7,8 +7,10 @@
 
 {% block content %}
 
+  {% image page.intro_image width-2000 as intro_image %}
+
   <section class="page-header">
-    <img class="img-fluid fade-animation" loading="lazy" src="https://www.stooptuinen.nl/images/projecten/Strakke-tuin-met-groene-sfeer/Strakke_tuin_met_groen_uitzicht_zichtlijnen.jpg" />
+    <img class="img-fluid fade-animation" loading="lazy" src="{{ intro_image.file.url }}" />
     <div class="content-center">
       <div class="motto">
         <div class="row">
@@ -19,9 +21,6 @@
       </div>
     </div>
   </section>
-
-  {% comment %} <p class="logo-title">Uniek<span class="text-primary">Groen</span></p>
-  <p class="logo-subtitle">&nbsp;Tuinarchitectuur & Realisaties<p> {% endcomment %}
 
  <section class="sticky-nav">
     {% include 'home/sections/nav.html' with page=page %}

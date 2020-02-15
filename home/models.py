@@ -163,7 +163,7 @@ class HomePage(Page):
     contact_title = models.CharField(verbose_name='titel', max_length=32, default='Contacteer ons')
 
 
-HomePage.content_panels = Page.content_panels + [
+HomePage.content_panels = [
     MultiFieldPanel([
         FieldPanel('title', classname='col8'),
         FieldRowPanel([
