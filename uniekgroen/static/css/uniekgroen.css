@@ -109,6 +109,14 @@ img.fade-animation {
   min-height: 100%;
 }
 
+@supports (-webkit-overflow-scrolling: touch) {
+  /* CSS specific to iOS devices */ 
+
+  .parallax-row {
+    background-attachment: scroll;
+  }
+}
+
 .navbar-collapse h4 {
   margin: 5px 0 0;
 }
