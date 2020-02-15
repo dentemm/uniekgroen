@@ -5,7 +5,7 @@
     <h1 class="title text-white">{{ page.section_2_title|upper }}</h1>
   </div>
 
-  {% image page.section_2_image_part_1 original as img1 %}
+  {% image page.section_2_image_part_1 width-2000 as img1 %}
 
   <div class="container-fluid">
     <div class="row px-5 parallax-row" style="background-image: url({{ img1.file.url }})">
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  {% image page.section_2_image_part_2 original as img2 %}
+  {% image page.section_2_image_part_2 width-2000 as img2 %}
 
   <div class="container-fluid">
     <div class="row px-5 parallax-row" style="background-image: url({{ img2.file.url }})">
@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  {% image page.section_2_image_part_3 original as img3 %}
+  {% image page.section_2_image_part_3 width-2000 as img3 %}
 
   <div class="container-fluid">
     <div class="row px-5 parallax-row" style="background-image: url({{ img3.file.url }})">

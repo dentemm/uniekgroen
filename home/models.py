@@ -70,8 +70,17 @@ WebsiteSettings.panels = [
 
 class HomePage(Page):
 
-    # Section 1: Who are we? 
+    # Intro
 
+    intro_image = models.ForeignKey(
+        'wagtailimages.Image',
+        on_delete=models.SET_NULL,
+        related_name='+',
+        null=True,
+        blank=True
+    )
+
+    # Section 1: Who are we? 
     section_1_title = models.CharField(verbose_name='Sectie 1', max_length=64, default='')
     section_1_image = models.ForeignKey(
         'wagtailimages.Image',
@@ -155,6 +164,14 @@ class HomePage(Page):
 
 
 HomePage.content_panels = Page.content_panels + [
+    MultiFieldPanel([
+        FieldPanel('title', classname='col8'),
+        FieldRowPanel([
+            ImageChooserPanel('intro_image')
+        ])
+    ],  heading='Intro',
+        classname='collapsible'
+    ),
     MultiFieldPanel([
         FieldRowPanel([
             FieldPanel('section_1_title', classname='col6'),
