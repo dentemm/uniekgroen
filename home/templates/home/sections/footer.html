@@ -2,10 +2,24 @@
 
 <footer class="footer footer-black bg-dark">
   <div class="container">
-    <div class="col-lg-4">
-      <img class="img img-fluid" loading="lazy" src="{% static 'images/logo_ug_wit.svg' %}" alt="Logo Uniek Groen">
-    </div>
-    <div class="col-lg-4 offset-lg-2">
+    <div class="row">
+      <div class="col-lg-4 pt-3">
+        <img class="img img-fluid" loading="lazy" src="{% static 'images/logo_ug_wit.svg' %}" alt="Logo Uniek Groen">
+      </div>
+      <div class="col-lg-4 offset-lg-4 text-primary text-right py-3">
+        <h4 class="my-0 text-white"><b>{{ settings.home.WebsiteSettings.locatie }}</b></h4>
+        <p>
+          <b>
+          {{ settings.home.WebsiteSettings.locatie.straat }} {{ settings.home.WebsiteSettings.locatie.huisnummer }}<br/>
+          {{ settings.home.WebsiteSettings.locatie.postcode }} {{ settings.home.WebsiteSettings.locatie.woonplaats }}
+          <br/>
+          <br/>
+          {{ settings.home.WebsiteSettings.telefoon }} <br/>
+          {{ settings.home.WebsiteSettings.email }} <br/>
+          {{ settings.home.WebsiteSettings.btw_nummer }}
+          </b>
+        </p>
+      </div>
     </div>
   </div>
   <hr>

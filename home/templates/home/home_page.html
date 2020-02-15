@@ -26,10 +26,10 @@
     {% include 'home/sections/nav.html' with page=page %}
   </section>
 
-  <section id="section1">
+  <section id="section1" style="background: radial-gradient(#c1e5b4, #488c2f)">
     {% include 'home/sections/section1.html' with page=page %}
   </section>
-
+  
   <!-- SECTION 2: WHAT WE DO -->
   <section id="section2">
     {% include 'home/sections/section2.html' with page=page %}
@@ -52,11 +52,10 @@
   </section> {% endcomment %}
 
   <section id="contact" style="background: radial-gradient(#c1e5b4, #488c2f)">
-  <!-- <section id="contact" style="background: radial-gradient(#9bd088, #c1e5b4)"> -->
     {% include 'home/sections/contact.html' with title=page.contact_title %}
   </section>
 
-  {% include 'home/sections/footer.html' %}
+  {% include 'home/sections/footer.html' with page=page settings=settings %}
 
 {% endblock content %}
 

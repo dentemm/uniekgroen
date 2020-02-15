@@ -71,7 +71,6 @@ WebsiteSettings.panels = [
 class HomePage(Page):
 
     # Intro
-
     intro_image = models.ForeignKey(
         'wagtailimages.Image',
         on_delete=models.SET_NULL,
