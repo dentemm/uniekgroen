@@ -10,11 +10,13 @@
   {% image page.intro_image width-2000 as intro_image %}
 
   <section class="page-header">
-    <img class="img-fluid fade-animation" loading="lazy" src="{{ intro_image.file.url }}" />
+    <div class="d-none d-md-block">
+      <img class="img-fluid fade-animation" loading="lazy" src="{{ intro_image.file.url }}" />
+    </div>
     <div class="content-center">
       <div class="motto">
         <div class="row">
-          <div class="offset-lg-3 col-lg-6 offset-sm-2 col-sm-10">
+          <div class="offset-lg-3 col-lg-6 offset-sm-1 col-sm-10">
             <img src="{% static 'images/logo_v2.png' %}" loading="lazy" alt="Image" class="img-rounded img-responsive appear-animation" />
           </div>
         </div>
