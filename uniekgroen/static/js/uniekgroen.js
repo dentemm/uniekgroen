@@ -8,11 +8,15 @@ window.onload = function () {
 
     let current = 0;
 
-    const navbarDist = navbar.offset().top;
-    let text1Dist = $('#section2-extra').offset().top;
-    let text2Dist = $('#section3-extra').offset().top;
+    const bodyHeight = document.body.scrollHeight;
 
     const onScroll = () => {
+
+        if (document.documentElement.scrollTop >= bodyHeight) {return}
+
+        const navbarDist = navbar.offset().top;
+        let text1Dist = $('#section2-extra').offset().top;
+        let text2Dist = $('#section3-extra').offset().top;
 
         current = $(this).scrollTop();
         const navbarDiff = current - navbarDist;
@@ -40,8 +44,6 @@ window.onload = function () {
         if (text2Diff > 0) {
             text2.css('top', `${text2Diff}px`);
         } 
-
-        previous = $(this).scrollTop();
     };
 
     $(window).scroll(onScroll);
