@@ -29,7 +29,7 @@
     <!-- for xs / sm -->
     <div class="d-block d-md-none"> 
       <ul class="nav justify-content-center my-5">
-        <li class="nav-item ug-nav mx-3">
+        <li class="nav-item ug-nav mx-3 mb-3">
           <a class="nav-link active" data-toggle="pill" href="#part1" role="tab">
             <h3 class="text-center my-0 px-2">Ontwerp traject</h3>
           </a>
@@ -54,7 +54,7 @@
               <div class="nav-tabs-wrapper mr-0">
                 <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
                   {% for item in page.design_items.all %}
-                  <li class="nav-item">
+                  <li class="nav-item mt-3">
                     <a class="nav-link {% if forloop.first %}active{% endif %}" href="#part1{{ forloop.counter }}" role="tab" data-toggle="tab">
                       <h4 class="mt-0 mb-3">{{ item.name }}</h4>
                     </a>

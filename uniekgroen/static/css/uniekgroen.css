@@ -250,6 +250,10 @@ img.fade-animation {
   .nav-justified .nav-item {
     text-align: left;
   }
+
+  .nav-tabs-navigation.text-right {
+    text-align: center !important;
+  }
 }
 
 @media (max-width: 768px) {
