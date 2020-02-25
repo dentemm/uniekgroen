@@ -1,5 +1,9 @@
 from django import forms
 from django.db import models
+from django.core.mail import EmailMessage
+from django.shortcuts import render
+from django.template.loader import get_template
+from django.contrib import messages
 
 from wagtail.core.models import Page, Orderable
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
@@ -71,6 +75,8 @@ WebsiteSettings.panels = [
 
 class HomePage(AbstractEmailForm):
 
+    template = 'home/home_page.html'
+
     def save(self, *args, **kwargs):
 
         if not self.from_address:
@@ -113,6 +119,9 @@ class HomePage(AbstractEmailForm):
         msg = EmailMessage(subject, content, to=receivers, from_email=sender)
         msg.content_subtype = 'html'
         msg.send()
+
+    def get_landing_page_template(self, request, *args, **kwargs):
+        return self.template
 
     # Intro
     intro_image = models.ForeignKey(
@@ -293,14 +302,14 @@ HomePage.content_panels = [
                 FieldPanel('from_address', classname='col6')
             ])
         ],
-        heading='Mail setup ',
+        heading='Contact: mail setup ',
         classname='collapsible collapsed'
     ),
     MultiFieldPanel(
         [
             InlinePanel('form_fields', label='Form fields'),
         ],
-        heading='Contactformulier',
+        heading='Contact: velden',
         classname='collapsible collapsed'
     )
 ]
