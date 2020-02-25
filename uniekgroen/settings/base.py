@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
     'wagtailmedia',
     'storages',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

@@ -4,9 +4,10 @@ from django.db import models
 from wagtail.core.models import Page, Orderable
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.core.fields import RichTextField
-from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel, InlinePanel
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
+from wagtail.contrib.settings.models import BaseSetting, register_setting
 
 from modelcluster.models import ClusterableModel
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
@@ -68,7 +69,50 @@ WebsiteSettings.panels = [
     )
 ]
 
-class HomePage(Page):
+class HomePage(AbstractEmailForm):
+
+    def save(self, *args, **kwargs):
+
+        if not self.from_address:
+            self.from_address = 'info@uniekgroen.be'
+
+        super(HomePage, self).save(*args, **kwargs)
+
+    def serve(self, request, *args, **kwargs):
+
+        ctx = self.get_context(request)
+
+        if request.method == 'POST':
+            form = self.get_form(request.POST, page=self, user=request.user)
+            
+            if form.is_valid():
+                self.process_form_submission(form)
+                ctx['form'] = self.get_form(page=self, user=request.user)
+                messages.success(request, self.thank_you_text)
+                return render(request, self.get_landing_page_template(request), ctx)
+
+            else: 
+                ctx['form'] = form
+                return render(request, self.get_landing_page_template(request), ctx)
+
+        form = self.get_form(page=self, user=request.user)                
+        ctx['form'] = form 
+
+        return render(request, self.get_template(request), ctx)
+
+    def send_mail(self, form):
+
+        subject = self.subject
+        receivers = [self.to_address, ]
+        sender = self.from_address
+
+        ctx = {}
+        ctx['form'] = form
+        content = get_template('home/mails/contact_form.html').render(ctx)
+        
+        msg = EmailMessage(subject, content, to=receivers, from_email=sender)
+        msg.content_subtype = 'html'
+        msg.send()
 
     # Intro
     intro_image = models.ForeignKey(
@@ -159,6 +203,8 @@ class HomePage(Page):
 
     # Contact
 
+    thank_you_text = models.CharField(verbose_name='Bevestiging tekst', default='Bedankt voor je bericht!', max_length=160)
+
     contact_title = models.CharField(verbose_name='titel', max_length=32, default='Contacteer ons')
 
 
@@ -238,6 +284,25 @@ HomePage.content_panels = [
         heading='Sectie 3 - tussen tekst',
         classname='collapsible collapsed'
     ),
+    MultiFieldPanel(
+        [
+            FieldPanel('subject'),
+            FieldPanel('thank_you_text'),
+            FieldRowPanel([
+                FieldPanel('to_address', classname='col6'),
+                FieldPanel('from_address', classname='col6')
+            ])
+        ],
+        heading='Mail setup ',
+        classname='collapsible collapsed'
+    ),
+    MultiFieldPanel(
+        [
+            InlinePanel('form_fields', label='Form fields'),
+        ],
+        heading='Contactformulier',
+        classname='collapsible collapsed'
+    )
 ]
 
 class DesignItem(Orderable):
@@ -261,3 +326,6 @@ ImplementationItem.panels = [
     FieldPanel('name'),
     FieldPanel('desc')
 ]
+
+class HomePageFormField(AbstractFormField):
+    page = ParentalKey(HomePage, related_name='form_fields')

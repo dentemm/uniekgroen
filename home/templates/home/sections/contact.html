@@ -1,3 +1,4 @@
+{% load wagtailcore_tags widget_tweaks %}
 
 <div id="contact-us">
   <div class="contactus-1 py-5">
@@ -13,7 +14,7 @@
             <div class="card-body">
               <div class="col-md-10 offset-md-1">
 
-                <form role="form" id="contact-form" method="post">
+                <form role="form" id="contact-form" action="{% pageurl page %}" method="POST" method="post">
                   <div class="card-body">
                     <div class="form-group label-floating">
                       <input type="email" name="email" class="form-control" placeholder="Naam">
