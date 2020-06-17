@@ -7,9 +7,10 @@ from wagtail.core.models import Orderable
 from wagtail.snippets.models import register_snippet
 from wagtail.search import index
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, FieldRowPanel
+from wagtail.snippets.edit_handlers import SnippetChooserPanel
+from wagtail.images.edit_handlers import ImageChooserPanel
 
 from .helpers import Adres
-
 
 @register_snippet
 class Locatie(Adres, index.Indexed):

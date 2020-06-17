@@ -314,6 +314,34 @@ HomePage.content_panels = [
     )
 ]
 
+HomePage.parent_page_types = []
+
+HomePage.subpage_types = [
+    'home.Realisatie'
+]
+
+class Realisatie(Page):
+
+    locatie = models.ForeignKey(
+        Locatie,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name='+'
+    )
+    show = models.BooleanField(verbose_name='toon op homepage', default=False)
+
+Realisatie.content_panels = [
+    MultiFieldPanel([
+        FieldPanel('title', classname='col8'),
+        FieldPanel('locatie', classname='col8'),
+        FieldPanel('show', classname='col8')
+    ], heading='Algemene informatie'),
+    MultiFieldPanel([
+        InlinePanel('images')
+    ], heading='Afbeeldingen')
+
+]
+
 class DesignItem(Orderable):
     page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='design_items')
     name = models.CharField(verbose_name='naam', max_length=255)
@@ -338,3 +366,16 @@ ImplementationItem.panels = [
 
 class HomePageFormField(AbstractFormField):
     page = ParentalKey(HomePage, related_name='form_fields')
+
+class RealisatieAfbeelding(Orderable):
+    page = ParentalKey(Realisatie, on_delete=models.CASCADE, related_name='images')
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        on_delete=models.SET_NULL,
+        related_name='images',
+        null=True
+    )
+
+RealisatieAfbeelding.panels = [
+    ImageChooserPanel('image')
+]
