@@ -84,9 +84,19 @@ class HomePage(AbstractEmailForm):
 
         super(HomePage, self).save(*args, **kwargs)
 
+    def gallery_images(self):
+
+        images = []
+
+        for item in Realisatie.objects.all():
+            images.extend(item.images.all())
+
+        return images
+
     def serve(self, request, *args, **kwargs):
 
         ctx = self.get_context(request)
+        ctx['gallery_images'] = self.gallery_images()
 
         if request.method == 'POST':
             form = self.get_form(request.POST, page=self, user=request.user)
@@ -101,7 +111,8 @@ class HomePage(AbstractEmailForm):
                 ctx['form'] = form
                 return render(request, self.get_landing_page_template(request), ctx)
 
-        form = self.get_form(page=self, user=request.user)                
+        form = self.get_form(page=self, user=request.user)
+
         ctx['form'] = form 
 
         return render(request, self.get_template(request), ctx)
@@ -291,6 +302,12 @@ HomePage.content_panels = [
         ImageChooserPanel('section_3_extra_image', classname='col8')
     ],
         heading='Sectie 3 - tussen tekst',
+        classname='collapsible collapsed'
+    ),
+    MultiFieldPanel([
+
+    ],
+        heading='Sectie 4 - realisaties',
         classname='collapsible collapsed'
     ),
     MultiFieldPanel(
