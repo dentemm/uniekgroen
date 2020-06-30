@@ -231,6 +231,27 @@ img.fade-animation {
   animation: slide-from-bottom 0.6s ease-out;
 }
 
+.carousel-control {
+  background-color: #86c66e;
+}
+
+.carousel-indicators .active {
+  background-color: #86c66e;
+}
+
+.carousel-control:focus, .carousel-control:hover {
+  background-color: darkgreen;
+}
+
+.carousel-caption {
+  text-align: left;
+}
+
+.carousel-caption p {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
 @keyframes slide-from-right {
   0% { transform: translateX(100%); }
   100% { transform: translateX(0); }
