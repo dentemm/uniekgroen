@@ -14,26 +14,20 @@
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
               <ol class="carousel-indicators">
-              {% for item in images %}
+              {% for item in projects %}
                 <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter }}" class="{% if forloop.first %}active{% endif %}"></li>
               {% endfor %}
               </ol>
-
-              {% comment %} <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
-              </ol> {% endcomment %}
               <div class="carousel-inner" role="listbox">
 
-                {% for item in images %}
+                {% for item in projects %}
 
                   <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                    {% image item.image fill-800x500 as tmp_img %}
+                    {% image item.images.first.image fill-800x500 as tmp_img %}
 
                     <img class="d-block img-fluid" src="{{ tmp_img.file.url }}" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
-                      <p>{{ item }}</p>
+                      <p>{{ item.locatie.naam }}</p>
                     </div>
                   </div>
 
@@ -41,11 +35,11 @@
 
               </div>
               <a class="left carousel-control carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <i class="nc-icon nc-simple-left"></i>
+                <i class="nc-icon nc-simple-left"><</i>
                 <i class="sr-only">Previous</i>
               </a>
               <a class="right carousel-control carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <i class="nc-icon nc-simple-right"></i>
+                <i class="nc-icon nc-simple-right">></i>
                 <i class="sr-only">Next</i>
               </a>
             </div>

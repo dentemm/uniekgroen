@@ -84,19 +84,20 @@ class HomePage(AbstractEmailForm):
 
         super(HomePage, self).save(*args, **kwargs)
 
-    def gallery_images(self):
+    def projects(self):
 
-        images = []
+        realisaties = []
 
         for item in Realisatie.objects.all():
-            images.extend(item.images.all())
+            if item.show:
+                realisaties.append(item)
 
-        return images
+        return realisaties
 
     def serve(self, request, *args, **kwargs):
 
         ctx = self.get_context(request)
-        ctx['gallery_images'] = self.gallery_images()
+        ctx['projects'] = self.projects()
 
         if request.method == 'POST':
             form = self.get_form(request.POST, page=self, user=request.user)

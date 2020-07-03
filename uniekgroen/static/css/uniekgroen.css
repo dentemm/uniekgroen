@@ -233,6 +233,9 @@ img.fade-animation {
 
 .carousel-control {
   background-color: #86c66e;
+}
+
+.carousel-control.right, .carousel-control.left {
   height: 40px;
   width: 40px;
 }

@@ -52,7 +52,7 @@
 
   {% if user.is_authenticated %}
   <section id="section4">
-    {% include 'home/sections/section4.html' with title=page.section_4_title images=gallery_images %}
+    {% include 'home/sections/section4.html' with title=page.section_4_title projects=projects %}
   </section>
   {% endif %}
 
