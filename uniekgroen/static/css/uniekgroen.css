@@ -257,6 +257,10 @@ img.fade-animation {
   font-size: 1.2rem;
 }
 
+.pswp__bg {
+  background: rgba(35,35,35,.96);
+}
+
 @keyframes slide-from-right {
   0% { transform: translateX(100%); }
   100% { transform: translateX(0); }

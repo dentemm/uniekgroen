@@ -106,22 +106,16 @@
 
 <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 	<div class="row">
-
-    {% for item in projects %}
-      {% for image in item.images.all %}
-
-        {% image image.image fill-800x500 as tmp_img %}
-
+  {% for item in projects %}
+    {% for image in item.images.all %}
+      {% image image.image fill-1200x750 as tmp_img %}
     <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="col-md-3 col-sm-4 gallery-item">
-      <a href="{{ tmp_img.file.url }}" itemprop="contentUrl" data-size="750x1002">
-        <img src="{{ tmp_img.file.url }}" itemprop="thumbnail" alt="Image description" class="vertical-image img-rounded img-responsive" />
+      <a href="{{ tmp_img.file.url }}" itemprop="contentUrl" data-size="800x500">
+        <img src="{{ tmp_img.file.url }}" itemprop="thumbnail" alt="Image description" class="img-rounded img-responsive" />
       </a>
-      <figcaption itemprop="caption description" class="gallery-caption">Gucci</figcaption>
+      <figcaption itemprop="caption description" class="gallery-caption">{{ item.locatie.name }}</figcaption>
     </figure>
-
-      {% endfor %}
     {% endfor %}
-
-
+  {% endfor %}
 	</div>
 </div>

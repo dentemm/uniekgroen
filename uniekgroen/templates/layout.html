@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}{% endblock extra_css %}
+
+{% block content %}
+  {% block navigation %}{% endblock navigation %}
+{% endblock content %}
+
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/paper-kit.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/uniekgroen.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'js/photo_swipe/photoswipe.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/photo_swipe/photoswipe-ui-default.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/photo_swipe/init-gallery.js' %}"></script>
+
+{% endblock %}
