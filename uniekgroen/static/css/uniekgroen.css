@@ -257,6 +257,10 @@ img.fade-animation {
   font-size: 1.2rem;
 }
 
+.modal-dialog {
+  max-width: 1200px !important;
+}
+
 .pswp__bg {
   background: rgba(35,35,35,.96);
 }
