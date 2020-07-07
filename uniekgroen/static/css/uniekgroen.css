@@ -261,6 +261,14 @@ img.fade-animation {
   max-width: 1200px !important;
 }
 
+.modal-content {
+  background-color: transparent !important;
+}
+
+.modal-body {
+  padding: 0px !important;
+}
+
 .pswp__bg {
   background: rgba(35,35,35,.96);
 }

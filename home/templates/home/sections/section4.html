@@ -50,20 +50,37 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-      {% for image in item.images.all %}
-        {% image image.image fill-1200x750 as tmp_img %}
-          <img class="img-fluid" src="{{ tmp_img.file.url }}">
-      {% endfor %}
+
+        <div class="page-carousel">
+          <div id="lightboxcarousel-{{ forloop.counter }}" class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+            {% for image in item.images.all %}
+              <li data-target="#lightboxcarousel-{{ forloop.counter }}" data-slide-to="{{ forloop.counter }}" class="{% if forloop.first %}active{% endif %}"></li>
+            {% endfor %}
+            </ol>
+            <div class="carousel-inner" role="listbox">
+            {% for image in item.images.all %}
+              {% image image.image fill-1200x750 as tmp_img %}
+              <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img class="img-fluid" src="{{ tmp_img.file.url }}">
+                  <div class="carousel-caption d-none d-md-block">
+                    <p>{{ item.title }}</p>
+                  </div>
+              </div>
+            {% endfor %}
+            </div>
+            <a class="left carousel-control carousel-control-prev" href="#lightboxcarousel-{{ forloop.counter }}" role="button" data-slide="prev">
+              <i class="nc-icon nc-simple-left"><</i>
+              <i class="sr-only">Previous</i>
+            </a>
+            <a class="right carousel-control carousel-control-next" href="#lightboxcarousel-{{ forloop.counter }}" role="button" data-slide="next">
+              <i class="nc-icon nc-simple-right">></i>
+              <i class="sr-only">Next</i>
+            </a>
+          </div>
+        </div>
       </div>
-      <!--<div class="modal-footer">
-        <div class="left-side">
-          <button type="button" class="btn btn-default btn-link" data-dismiss="modal">Never mind</button>
-        </div>
-        <div class="divider"></div>
-        <div class="right-side">
-          <button type="button" class="btn btn-danger btn-link">Delete</button>
-        </div>
-      </div>-->
     </div>
   </div>
 </div>
