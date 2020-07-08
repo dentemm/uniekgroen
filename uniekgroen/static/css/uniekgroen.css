@@ -269,6 +269,22 @@ img.fade-animation {
   padding: 0px !important;
 }
 
+.modal-close {
+  position: absolute !important;
+  top: 2rem;
+  right: 2rem;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background-color: #86c66e !important;
+  line-height: 1.5rem;
+}
+
+.modal-close b {
+  vertical-align: top;
+}
+
 .pswp__bg {
   background: rgba(35,35,35,.96);
 }
