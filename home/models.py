@@ -194,6 +194,17 @@ class HomePage(AbstractEmailForm):
         blank=True
     )
 
+    section_2_subtitle4 = models.CharField(verbose_name='Ondertitel 4', max_length=64, default='Specialisaties')
+    section_2_desc_4 = RichTextField('Beschrijving 4', blank=True, null=True, features=['h5', 'h6', 'bold', 'italic', 'link', 'hr', 'blockquote'])
+    section_2_image_part_4 = models.ForeignKey(
+        'wagtailimages.Image',
+        verbose_name='Achtergrond 4',
+        on_delete=models.SET_NULL,
+        related_name='+',
+        null=True,
+        blank=True
+    )
+
     section_2_extra = models.CharField(verbose_name='Tekst', max_length=128, null=True)
     section_2_extra_image = models.ForeignKey(
         'wagtailimages.Image',
