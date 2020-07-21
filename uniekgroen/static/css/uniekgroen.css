@@ -339,4 +339,8 @@ img.fade-animation {
   #section3 .nav-tabs-navigation:last-child .nav-stacked {
     border: none;
   }
+
+  .nav-tabs .nav-item.mt-3 {
+    margin-top: 0rem !important;
+  }
 }

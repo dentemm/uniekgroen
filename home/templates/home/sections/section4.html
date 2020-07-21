@@ -1,10 +1,10 @@
 {% load static wagtailimages_tags %}
 
-<div class="section section-dark">
+<div class="section section-dark pt-5">
   <div class="container">
     <div class="row">
       <div class="col-md-10 ml-auto mr-auto text-center">
-        <h1 class="title">{{ title|upper }}</h1>
+        <h1 class="title mt-0">{{ title|upper }}</h1>
       </div>
     </div>
     <div class="row">
@@ -49,7 +49,7 @@
 
 {% for item in projects %}
 
-<div id="modal-{{ forloop.counter }}" class="modal" tabindex="-1" role="dialog">
+<div id="modal-{{ forloop.counter }}" class="modal fade show" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
