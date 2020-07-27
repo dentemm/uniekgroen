@@ -286,6 +286,12 @@ HomePage.content_panels = [
         FieldRowPanel([
             ImageChooserPanel('section_2_image_part_3'),
         ]),
+
+        FieldPanel('section_2_subtitle4', classname='col8'),
+        FieldPanel('section_2_desc_4', classname='col8'),
+        FieldRowPanel([
+            ImageChooserPanel('section_2_image_part_4'),
+        ]),
     ], 
         heading='Sectie 2',
         classname='collapsible collapsed'
