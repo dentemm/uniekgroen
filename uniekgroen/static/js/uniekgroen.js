@@ -46,5 +46,5 @@ window.onload = function () {
         } 
     };
 
-    $(window).scroll(onScroll);
+    // $(window).scroll(onScroll);
 };
