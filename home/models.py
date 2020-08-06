@@ -233,6 +233,16 @@ class HomePage(AbstractEmailForm):
 
     section_4_title = models.CharField(verbose_name='Sectie 4', max_length=64, default='')
 
+    section_4_extra = models.CharField(verbose_name='Tekst', max_length=128, null=True)
+    section_4_extra_image = models.ForeignKey(
+        'wagtailimages.Image',
+        verbose_name='Achtergrond',
+        on_delete=models.SET_NULL,
+        related_name='+',
+        null=True,
+        blank=True
+    )
+
     # Contact
 
     thank_you_text = models.CharField(verbose_name='Bevestiging tekst', default='Bedankt voor je bericht!', max_length=160)
@@ -326,6 +336,13 @@ HomePage.content_panels = [
 
     ],
         heading='Sectie 4 - realisaties',
+        classname='collapsible collapsed'
+    ),
+    MultiFieldPanel([
+        FieldPanel('section_4_extra', classname='col8'),
+        ImageChooserPanel('section_4_extra_image', classname='col8')
+    ],
+        heading='Sectie 4 - tussen tekst',
         classname='collapsible collapsed'
     ),
     MultiFieldPanel(
