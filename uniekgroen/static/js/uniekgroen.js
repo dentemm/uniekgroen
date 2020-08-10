@@ -1,50 +1,155 @@
+// window.onload = function () {
+
+//     /* ELEMENTS TO CHANGE */
+//     let navbar = $('#nav')
+
+//     let text1 = $('#text-1');
+//     let text2 = $('#text-2');
+
+//     let current = 0;
+
+//     const bodyHeight = document.body.scrollHeight;
+
+//     const onScroll = () => {
+
+//         if (document.documentElement.scrollTop >= bodyHeight) {return}
+
+//         const navbarDist = navbar.offset().top;
+//         let text1Dist = $('#section2-extra').offset().top;
+//         let text2Dist = $('#section3-extra').offset().top;
+
+//         current = $(this).scrollTop();
+//         const navbarDiff = current - navbarDist;
+
+//         /* NAVBAR */
+//         if (navbarDiff >= 0) {
+//             navbar.removeClass('bg-dark');
+//             navbar.css('background-color', 'rgba(52, 58, 64, 0.6)');
+
+//         } else {
+//             if (!navbar.hasClass('bg-dark')) {
+//                 navbar.addClass('bg-dark');
+//                 navbar.removeAttr('style');
+//             }
+//         }
+
+//         const text1Diff = current - text1Dist;
+//         const text2Diff = current - text2Dist;
+        
+//         /* TEXT 1 */
+//         if (text1Diff > 0) {
+//             text1.css('top', `${text1Diff}px`);
+//         }
+
+//         if (text2Diff > 0) {
+//             text2.css('top', `${text2Diff}px`);
+//         } 
+//     };
+
+//     // $(window).scroll(onScroll);
+// };
+
+
 window.onload = function () {
 
     /* ELEMENTS TO CHANGE */
-    let navbar = $('#nav')
+    let navbar = $('.sticky-nav>div').first();
+    let titles = $('.sticky-nav').find('div.description');
+    let icons = $('.sticky-nav').find('div.icon');
 
     let text1 = $('#text-1');
     let text2 = $('#text-2');
 
     let current = 0;
 
-    const bodyHeight = document.body.scrollHeight;
+    const navbarDist = $('.sticky-nav').offset().top;
+    let text1Dist = $('#section2-extra').offset().top;
+    let text2Dist = $('#section3-extra').offset().top;
+
+    let canMove = true;
+    // const isChrome = !!window.chrome;
+
+    const updateNavbar = (shouldRemove) => {
+        
+        if (shouldRemove === true) {
+            navbar.removeClass('py-5');
+            titles.attr('hidden', true);
+            icons.addClass('icon-sm');
+        } else if (shouldRemove === false) {
+            navbar.addClass('py-5');
+            titles.attr('hidden', false);
+            icons.removeClass('icon-sm');
+            canMove = true;
+        }
+        text1Dist = $('#section2-extra').offset().top;
+        text2Dist = $('#section3-extra').offset().top;
+    }
 
     const onScroll = () => {
 
-        if (document.documentElement.scrollTop >= bodyHeight) {return}
-
-        const navbarDist = navbar.offset().top;
-        let text1Dist = $('#section2-extra').offset().top;
-        let text2Dist = $('#section3-extra').offset().top;
-
         current = $(this).scrollTop();
         const navbarDiff = current - navbarDist;
+        
 
-        /* NAVBAR */
-        if (navbarDiff >= 0) {
-            navbar.removeClass('bg-dark');
-            navbar.css('background-color', 'rgba(52, 58, 64, 0.6)');
+        // /* NAVBAR */
+        // if (navbar.hasClass('py-5') && navbarDiff > 0) {
+            
+        //     updateNavbar(true);
 
-        } else {
-            if (!navbar.hasClass('bg-dark')) {
-                navbar.addClass('bg-dark');
-                navbar.removeAttr('style');
-            }
-        }
+        //     if (canMove) {
+        //         $(this).scrollTop(navbarDist);
+        //         canMove = false;
+        //     }
 
-        const text1Diff = current - text1Dist;
+        // } else if (!navbar.hasClass('py-5') && navbarDiff < 0) {
+        //     updateNavbar(false);
+        // }
+
+        current = $(this).scrollTop();  
+
+        // const text1Diff = current - text1Dist;
         const text2Diff = current - text2Dist;
         
         /* TEXT 1 */
-        if (text1Diff > 0) {
-            text1.css('top', `${text1Diff}px`);
-        }
+        // if (text1Diff > 0) {
+        //     text1.css('top', `${text1Diff}px`);
+        // }
 
         if (text2Diff > 0) {
-            text2.css('top', `${text2Diff}px`);
+
+            console.log("*** hierzo")
+
+            text2.css({position: 'fixed', top: '200px'})
+            // text2.css('top', `${text2Diff}px`);
         } 
+
+        previous = $(this).scrollTop();
     };
 
+    // const throttle = (func, limit) => {
+    //     let lastFunc;
+    //     let lastRan;
+
+    //     return function() {
+    //         const context = this;
+    //         const args = arguments;
+
+    //         if (!lastRan) {
+    //             func.apply(context, args);
+    //             lastRan = Date.now();
+
+    //         } else {
+    //             clearTimeout(lastFunc);
+    //             lastFunc = setTimeout(function() {
+    //                 if ((Date.now() - lastRan) >= limit) {
+    //                     func.apply(context, args)
+    //                     lastRan = Date.now()
+    //                 }
+    //             }, limit - (Date.now() - lastRan));
+    //         }
+    //     }
+    // };
+
     // $(window).scroll(onScroll);
+    // $(window).scroll(throttle(onScroll, 50));
 };

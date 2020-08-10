@@ -61,6 +61,12 @@ img.fade-animation {
   z-index: -10;
 }
 
+#text-1 {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 30vh;
+}
+
 #section3-extra {
   z-index: -5;
 }
@@ -86,6 +92,10 @@ img.fade-animation {
 
 .opacity-85 {
   opacity: 0.85;
+}
+
+.opacity-90 {
+  opacity: 0.90;
 }
 
 .height-25 {
