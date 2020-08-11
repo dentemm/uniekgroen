@@ -18,34 +18,20 @@ window.onload = function () {
         const section3diff = current - section3;
         const section4diff = current - section4;
 
-        if (section2diff > 0) {
-            section2Text.css({
-                opacity: 1
-            })
-        } else {
-            section2Text.css({
-                opacity: 0
-            }); 
-        }
-
-        if (section3diff > 0) {
-            section3Text.css({
-                opacity: 1
-            })
-        } else {
-            section3Text.css({
-                opacity: 0
-            }); 
-        }
-
         if (section4diff > 0) {
-            section4Text.css({
-                opacity: 1
-            })
-        } else {
-            section4Text.css({
-                opacity: 0
-            }); 
+            section4Text.css({ opacity: 1 })
+            section3Text.css({ opacity: 0 })
+            section2Text.css({ opacity: 0 })
+
+        } else if (section3diff > 0) { 
+            section3Text.css({ opacity: 1 })
+            section2Text.css({ opacity: 0 })
+            section4Text.css({ opacity: 0 })
+
+        } else if (section2diff > 0) {
+            section2Text.css({ opacity: 1 })
+            section3Text.css({ opacity: 0 })
+            section4Text.css({ opacity: 0 })
         }
     };
 

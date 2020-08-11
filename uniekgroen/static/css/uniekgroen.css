@@ -67,9 +67,9 @@ img.fade-animation {
 
 #section2-extra_text, #section3-extra_text, #section4-extra_text {
   position: fixed;
-  top: 30%;
+  top: 22%;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -22%);
   opacity: 0;
 }
 
