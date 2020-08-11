@@ -130,7 +130,47 @@ section.page-header, #section1, #section2, #section3, #section4 {
 }
 
 .navbar-collapse h4 {
-  margin: 5px 0 0;
+  margin: 6px 0 0;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler .icon-bar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  transition: all 0.2s;
+  background-color: #ffffffaa;
+  border-radius: 1px;
+  color: green;
+}
+
+.navbar-toggler .middle-bar, .navbar-toggler .bottom-bar {
+  margin-top: 6px;
+}
+
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
 }
 
 .nav-link.active > h4 {
