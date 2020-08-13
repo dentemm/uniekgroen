@@ -52,6 +52,73 @@ img.fade-animation {
   width: 100%;
 }
 
+@-webkit-keyframes scroll-inner {
+  from {
+    margin-top: 15%;
+  }
+  to {
+    margin-top: 50%;
+  }
+}
+@keyframes scroll-inner {
+  from {
+    margin-top: 15%;
+  }
+  to {
+    margin-top: 50%;
+  }
+}
+@-webkit-keyframes scroll-mouse {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 15px;
+  }
+}
+@keyframes scroll-mouse {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 15px;
+  }
+}
+
+div.mouse-container {
+  position: absolute;
+  bottom: 5%;
+  left: calc(50% - 1.5rem);
+}
+
+div.mouse {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  width: 3rem;
+  height: 4.7rem;
+  border: solid 2px rgb(134, 198, 110);
+  border-radius: 1.5rem;
+  -webkit-animation: scroll-mouse 1s;
+  animation: scroll-mouse 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+div.mouse span.scroll-down {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: rgb(134, 198, 110);
+  border-radius: 50%;
+  margin: 15% auto auto auto;
+  -webkit-animation: scroll-inner 1s;
+  animation: scroll-inner 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+}
+
 #section2 .rich-text > p, #section1 .rich-text > p {
   font-size: 1.6em;
   line-height: 1.3em;
@@ -189,6 +256,12 @@ section.page-header, #section1, #section2, #section3, #section4 {
 .page-header {
   background-color: white; 
   height: 100vh;
+}
+
+.page-header .motto {
+  display: flex;
+  height: 100vh;
+  align-items: center;
 }
 
 .sticky-nav {
