@@ -1,14 +1,24 @@
 window.onload = function () {
 
-    let section2 = $('#section2').offset().top;
-    let section3 = $('#section3').offset().top;
-    let section4 = $('#section4').offset().top;
+    let section2 = 0;
+    let section3 = 0;
+    let section4 = 0;
 
-    let section2Text = $('#section2-extra_text');
-    let section3Text = $('#section3-extra_text');
-    let section4Text = $('#section4-extra_text');
+    let section2Text = 0;
+    let section3Text = 0;
+    let section4Text = 0;
 
     let current = 0;
+
+    const setup = () => {
+        section2 = $('#section2').offset().top;
+        section3 = $('#section3').offset().top;
+        section4 = $('#section4').offset().top;
+    
+        section2Text = $('#section2-extra_text');
+        section3Text = $('#section3-extra_text');
+        section4Text = $('#section4-extra_text');
+    }
 
     const onScroll = () => {
 
@@ -35,5 +45,9 @@ window.onload = function () {
         }
     };
 
+    setup();
+
     $(window).scroll(onScroll);
+    $(window).resize(setup);
+ 
 };
