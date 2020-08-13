@@ -220,15 +220,15 @@ section.page-header, #section1, #section2, #section3, #section4 {
 
 .fade-animation {
   animation-name: fadingout;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-timing-function: ease-out;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
 
   -webkit-animation-name: fadingout;
-  -webkit-animation-duration: 3s;
+  -webkit-animation-duration: 2s;
   -webkit-animation-timing-function: ease-out;
-  -webkit-animation-delay: 1s;
+  -webkit-animation-delay: 0.5s;
   -webkit-animation-fill-mode: forwards;
 }
 
@@ -236,15 +236,15 @@ section.page-header, #section1, #section2, #section3, #section4 {
   opacity: 0;
 
   animation-name: fadingin;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-timing-function: ease-out;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
 
   -webkit-animation-name: fadingin;
-  -webkit-animation-duration: 3s;
+  -webkit-animation-duration: 2s;
   -webkit-animation-timing-function: ease-out;
-  -webkit-animation-delay: 1s;
+  -webkit-animation-delay: 0.5s;
   -webkit-animation-fill-mode: forwards;
 }
 
