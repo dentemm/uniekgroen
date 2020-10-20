@@ -49,7 +49,26 @@
         <div class="row">
 
           <!-- LEFT -->
-          <div class="col-md-6 col-lg-4 offset-lg-2 pr-0">
+
+          <!-- for xs / sm -->
+          <div class="d-block d-md-none col-md-6 col-lg-4 offset-lg-2">
+            <div class="nav-tabs-navigation text-center" style="padding-right: 0px !important">
+              <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
+                  {% for item in page.design_items.all %}
+                  <li class="nav-item mt-3">
+                    <a class="nav-link {% if forloop.first %}active{% endif %}" href="#part1{{ forloop.counter }}" role="tab" data-toggle="tab">
+                      <h4 class="mt-0 mb-3">{{ item.name }}</h4>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- for md / lg / xl -->
+          <div class="d-none d-md-block col-md-6 col-lg-4 offset-lg-2 pr-0">
             <div class="nav-tabs-navigation text-right">
               <div class="nav-tabs-wrapper mr-0">
                 <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
@@ -88,7 +107,26 @@
         <div class="row">
 
           <!-- LEFT -->
-          <div class="col-md-6 col-lg-4 offset-lg-2 pr-0">
+
+          <!-- for xs / sm -->
+          <div class="d-block d-md-none col-md-6 col-lg-4 offset-lg-2">
+            <div class="nav-tabs-navigation text-center" style="padding-right: 0px !important">
+              <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
+                  {% for item in page.implementation_items.all %}
+                  <li class="nav-item">
+                    <a class="nav-link {% if forloop.first %}active{% endif %}" href="#part2{{ forloop.counter }}" role="tab" data-toggle="tab">
+                      <h4 class="mt-0 mb-3">{{ item.name }}</h4>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- for md / lg / xl -->
+          <div class="d-none d-md-block col-md-6 col-lg-4 offset-lg-2 pr-0">
             <div class="nav-tabs-navigation text-right">
               <div class="nav-tabs-wrapper mr-0">
                 <ul class="nav nav-tabs flex-column nav-stacked" role="tablist">
