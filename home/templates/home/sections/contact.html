@@ -25,9 +25,6 @@
                 <form role="form" id="contact-form" action="{% pageurl page %}" method="POST">
                   {% csrf_token %}
                   <div class="card-body">
-
-
-
                   {% for field in form %}
                     <div class="form-row {% if forloop.last %}mb-3{% else %}mb-1{% endif %}">
                       <div class="col">
