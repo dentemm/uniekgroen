@@ -1,8 +1,10 @@
+import os
+
 from django import forms
 from django.db import models
 from django.core.mail import EmailMessage
 from django.shortcuts import render
-from django.template.loader import get_template
+from django.template.loader import render_to_string
 from django.contrib import messages
 
 from wagtail.core.models import Page, Orderable
@@ -15,6 +17,9 @@ from wagtail.contrib.settings.models import BaseSetting, register_setting
 
 from modelcluster.models import ClusterableModel
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
+
+import sendgrid
+from sendgrid.helpers.mail import Mail
 
 from .snippets import Locatie, GenericItem
 # from .helpers import GenericItem
@@ -126,11 +131,29 @@ class HomePage(AbstractEmailForm):
 
         ctx = {}
         ctx['form'] = form
-        content = get_template('home/mails/contact_form.html').render(ctx)
+        content = render_to_string('home/mails/contact_form.html', ctx)
+
+        try:
+            sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
+            data = {
+                "personalizations": [{
+                    "to": [
+                        {"email": self.to_address},
+                    ],
+                    "subject": subject
+                }],
+                "from": {
+                    "email": sender
+                },
+                "content": [{
+                    "type": "text/html",
+                    "value": content
+                }]
+            }
+            sg.client.mail.send.post(request_body=data)
         
-        msg = EmailMessage(subject, content, to=receivers, from_email=sender)
-        msg.content_subtype = 'html'
-        msg.send()
+        except Exception as error:
+            print('+++ error', error)
 
     def get_landing_page_template(self, request, *args, **kwargs):
         return self.template
