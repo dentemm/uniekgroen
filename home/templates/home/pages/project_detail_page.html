@@ -23,8 +23,13 @@
     {% include 'home/sections/nav.html' with page=page %}
   </section>
 
+  <!-- SECTION 2: WHO WE ARE -->
   <section id="section1" style="background: radial-gradient(#c1e5b4, #488c2f)">
+  {% if user.is_authenticated %}
     {% include 'home/sections/section1.html' with page=page %}
+  {% else %}
+    {% include 'home/sections/section1.html' with page=page %}
+  {% endif %}
   </section>
   
   <!-- SECTION 2: WHAT WE DO -->
