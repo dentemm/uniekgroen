@@ -89,6 +89,10 @@ class HomePage(AbstractEmailForm):
 
         super(HomePage, self).save(*args, **kwargs)
 
+    def persons(self):
+        return Person.object.all()
+
+
     def projects(self):
 
         realisaties = []
@@ -180,6 +184,7 @@ class HomePage(AbstractEmailForm):
     section_1_description = models.TextField('Informatie', default="", blank=True)
     section_1_desc = RichTextField('Informatie', blank=True, null=True, features=['h5', 'h6', 'bold', 'italic', 'link', 'hr', 'blockquote'])
 
+    # Section 1 new: Who are we?
 
     # Section 2: What do we have to offer?
     section_2_title = models.CharField(verbose_name='Sectie 2', max_length=64, default='')
@@ -302,6 +307,12 @@ HomePage.content_panels = [
         classname='collapsible collapsed'
     ),
     MultiFieldPanel([
+        InlinePanel('persons')
+    ], 
+        heading='Sectie 1 - vernieuwd',
+        classname='collapsible collapsed'
+    ),
+    MultiFieldPanel([
         FieldPanel('section_2_subtitle1', classname='col8'),
         FieldPanel('section_2_desc_1', classname='col8'),
         FieldRowPanel([
@@ -395,6 +406,21 @@ HomePage.subpage_types = [
     'home.Realisatie'
 ]
 
+class Person(Orderable):
+    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='persons')
+    name = models.CharField(verbose_name='naam', max_length=64)
+    description = models.CharField('korte beschrijving', default="", blank=True, max_length=180)
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        on_delete=models.SET_NULL,
+        null=True
+    )
+
+Person.panels = [
+    FieldPanel('name'),
+    FieldPanel('description'),
+    ImageChooserPanel('image')
+]
 class Realisatie(Page):
 
     locatie = models.ForeignKey(

@@ -7,41 +7,37 @@
   <div class="container-fluid">
     <div class="row">
       <div class="offset-lg-4 offset-md-3 col-lg-4 col-md-6 col-xs-10 text-center">
-
-
-<div class="page-carousel">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-    {% for item in projects %}
-      <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter }}" class="{% if forloop.first %}active{% endif %}"></li>
-    {% endfor %}
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      {% for item in projects %}
-        <div class="carousel-item {% if forloop.first %}active{% endif %}">
-          {% image item.images.first.image fill-800x500 as tmp_img %}
-          <a class="test" href="#" data-toggle="modal" data-target="#modal-{{ forloop.counter }}">
-            <img class="img-fluid" src="{{ tmp_img.file.url }}" alt="First slide">
-          </a>
-          <div class="carousel-caption d-none d-md-block">
-            <p>{{ item.title }}</p>
+        <div class="page-carousel">
+          <div id="persons" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+            {% for item in page.persons.all %}
+              <li data-target="#persons" data-slide-to="{{ forloop.counter }}" class="{% if forloop.first %}active{% endif %}"></li>
+            {% endfor %}
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              {% for item in page.persons.all %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                  {% image item.image fill-800x800 as tmp_img %}
+                  <a class="test" href="#" data-toggle="modal" data-target="#modal-{{ forloop.counter }}">
+                    <img class="img-fluid" src="{{ tmp_img.file.url }}" alt="First slide">
+                  </a>
+                  <div class="carousel-caption d-none d-md-block">
+                    <p style="text-shadow: black 0.1em 0.1em 0.2em; line-height: 1.3em;">{{ item.name }}</p>
+                    <p style="text-shadow: black 0.1em 0.1em 0.2em; font-weight: normal; line-height: 1.1em;">{{ item.description }}</p>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <a class="left carousel-control carousel-control-prev" href="#persons" role="button" data-slide="prev">
+              <i class="nc-icon nc-simple-left"><</i>
+              <i class="sr-only">Previous</i>
+            </a>
+            <a class="right carousel-control carousel-control-next" href="#persons" role="button" data-slide="next">
+              <i class="nc-icon nc-simple-right">></i>
+              <i class="sr-only">Next</i>
+            </a>
           </div>
         </div>
-      {% endfor %}
-    </div>
-    <a class="left carousel-control carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <i class="nc-icon nc-simple-left"><</i>
-      <i class="sr-only">Previous</i>
-    </a>
-    <a class="right carousel-control carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <i class="nc-icon nc-simple-right">></i>
-      <i class="sr-only">Next</i>
-    </a>
-  </div>
-</div>
-
-
- 
       </div>
     </div>
   </div>
