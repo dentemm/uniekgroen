@@ -39,7 +39,7 @@ sqlparse==0.3.0
 starkbank-ecdsa==1.1.0
 tablib==3.0.0
 Unidecode==1.1.1
-urllib3==1.25.6
+urllib3==1.25.8
 wagtail==2.12.2
 wagtailmedia==0.5.0
 webencodings==0.5.1
