@@ -2,6 +2,38 @@
 
 <div class="section section-dark pt-5">
   <div class="container">
+    
+
+{% comment %} 
+      <!-- Gallery inside carousel  -->
+      <div class="tns-carousel-wrapper tns-controls-outside tns-nav-outside gallery mx-5 mb-4">
+        <div class="tns-carousel-inner" data-carousel-options='{
+            "responsive":{
+              "0": {"items":1, "gutter": 16},
+              "576":{"items":2, "gutter": 20},
+              "991":{"items":3, "gutter": 24}
+            },
+            "loop": false
+          }'
+        >
+        {% for item in projects %}
+          {% image item.images.first.image fill-200x150 as small_image %}
+          {% image item.images.first.image fill-1000x750 as large_image %}
+
+          <!-- Item -->
+          <div>
+            <a href="{{ large_image.file.url }}" class="gallery-item" data-sub-html='<h6 class="fs-sm text-light">{{ item.caption }}</h6>'>
+              <img src="{{ small_image.file.url }}" alt="Gallery thumbnail">
+              <span class="gallery-item-caption">{{ item.caption }}</span>
+            </a>
+          </div>
+        {% endfor %}
+          <!-- Add as many gallery items wrapped in divs as you need -->
+        </div>
+      </div>
+ {% endcomment %}
+
+
     <div class="row">
       <div class="col-md-10 ml-auto mr-auto text-center">
         <h1 class="title mt-0">{{ title|upper }}</h1>

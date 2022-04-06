@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}{% endblock extra_css %}
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/lightgallery/css/lightgallery.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/tiny-slider/css/tiny-slider.css' %}">
+{% endblock %}
 
 {% block content %}
   {% block navigation %}{% endblock navigation %}
@@ -13,4 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'js/paper-kit.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/uniekgroen.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/lightgallery/js/lightgallery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/lg-video/lg-video.min.js' %}"></script>    
+    <script type="text/javascript" src="{% static 'vendor/tiny-slider/js/tiny-slider.js' %}"></script>  
 {% endblock %}
