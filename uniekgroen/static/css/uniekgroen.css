@@ -40,6 +40,10 @@ p {
   background-color: #eeeeee !important;
 }
 
+.bg-primary {
+  background-color: #6FAE57 !important;
+}
+
 .card-header:first-child {
   border-radius: 12px 12px 0 0;
 }
