@@ -87,6 +87,7 @@ dev.py
 media/
 
 .env
+.venv
 db.sqlite3
 
 # Node
