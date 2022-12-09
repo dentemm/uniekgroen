@@ -33,7 +33,7 @@
   {% endblock navigation%}
   
   <!-- SECTION 2: WHAT WE DO -->
-  <section id="section2">
+  <section id="wat-bieden-wij-aan">
     {% include 'home/sections/section2.html' with page=page %}
   </section>
   <section id="section2-extra">
@@ -42,7 +42,7 @@
   
 
   <!-- SECTION 1: WHO WE ARE -->
-  <section id="section1" style="background: radial-gradient(#c1e5b4, #488c2f)">
+  <section id="wie-zijn-wij" style="background: radial-gradient(#c1e5b4, #488c2f)">
   {% if user.is_authenticated %}
     {% include 'home/sections/section1_new.html' with page=page %}
   {% else %}
@@ -51,7 +51,7 @@
   </section>
 
   <!-- SECTION 3: HOW WE WORK -->
-  <section id="section3">
+  <section id="hoe-gaan-wij-te-werk">
     {% include 'home/sections/section3.html' with page=page %}
   </section>
   <section id="section3-extra">
@@ -59,7 +59,7 @@
   </section>
 
   <!-- SECTION 4: PORTFOLIO -->
-  <section id="section4">
+  <section id="realisaties">
     {% include 'home/sections/section4.html' with title=page.section_4_title projects=projects %}
   </section>
   {% if page.section_4_extra %}

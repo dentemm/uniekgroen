@@ -19,6 +19,10 @@
         <meta name="keywords" content="uniekgroen,uniek groen,uniek,groen,tuinarchitect,tuinontwerper,tuinarchitectuur,tuinontwerp,tuinaannemer,aannemer tuin,tuinrealisatie,tuinaanleg,tuin,moderne tuin,hedendaagse tuin,christoff chiaverini,jan weytjens,strakke tuin,landelijke tuin,zwembad,poolhouse,zwemvijver,vijver,siergrassen,gert,kwanten,houten terras,tuinverlichting,aanplantingsplan,beplantingsplan,meetstaat,offerte,offertes,knap,architectuur,paul,nijst,hovenier,advies,studie,tuinadvies,tuinstudie"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        {% block extra_before %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/paper-kit.min.css' %}">
