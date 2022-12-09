@@ -1,0 +1,8 @@
+#!/Users/timclaes/development/thinkmobile/projects/uniekgroen/.venv/bin/python3.9
+# -*- coding: utf-8 -*-
+import re
+import sys
+from poxls.xls_to_po import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())

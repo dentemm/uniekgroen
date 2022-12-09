@@ -127,7 +127,7 @@ div.mouse span.scroll-down {
   animation-timing-function: ease;
 }
 
-#section2 .rich-text > p, #section1 .rich-text > p {
+#wat-bieden-wij-aan .rich-text > p, #wie-zijn-wij .rich-text > p {
   font-size: 1.6em;
   line-height: 1.3em;
 }
@@ -148,12 +148,12 @@ div.mouse span.scroll-down {
   opacity: 0;
 }
 
-section.page-header, #section1, #section2, #section3, #section4 {
+section.page-header, #wie-zijn-wij, #wat-bieden-wij-aan, #hoe-gaan-wij-te-werk, #realisaties {
   position: relative;
   z-index: 100;
 }
 
-#section3 .rich-text > p {
+#hoe-gaan-wij-te-werk .rich-text > p {
   font-size: 1em;
   padding-left: 0.6rem !important;
 }
@@ -465,11 +465,11 @@ section.page-header, #section1, #section2, #section3, #section4 {
     font-size: 1.4em;
   }
 
-  #section3 .nav-tabs-navigation {
+  #hoe-gaan-wij-te-werk .nav-tabs-navigation {
     padding-right: 5em !important;
   }
 
-  #section3 .nav-tabs-navigation:last-child .nav-stacked {
+  #hoe-gaan-wij-te-werk .nav-tabs-navigation:last-child .nav-stacked {
     border: none;
   }
 

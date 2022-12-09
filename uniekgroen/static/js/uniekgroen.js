@@ -11,9 +11,9 @@ window.onload = function () {
     let current = 0;
 
     const setup = () => {
-        section2 = $('#section2').offset().top;
-        section3 = $('#section3').offset().top;
-        section4 = $('#section4').offset().top;
+        section2 = $('#wat-bieden-wij-aan').offset().top;
+        section3 = $('#hoe-gaan-wij-te-werk').offset().top;
+        section4 = $('#realisaties').offset().top;
     
         section2Text = $('#section2-extra_text');
         section3Text = $('#section3-extra_text');
