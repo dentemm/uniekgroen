@@ -16,7 +16,7 @@ WSGI_APPLICATION = 'uniekgroen.wsgi.application'
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.uniekgroen.be', '.aws.amazon.com', '.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.uniekgroen.be', '.uniekgroen.com', '.aws.amazon.com', '.herokuapp.com']
 
 # Enforce SSL
 SECURE_SSL_REDIRECT = True
