@@ -27,16 +27,16 @@
                   <div class="card-body">
                   {% for field in form %}
                     <div class="form-row {% if forloop.last %}mb-3{% else %}mb-1{% endif %}">
-                      <div class="col">
+                      <div class="col border-bottom">
                       {% if field.field.widget.input_type == 'select' or field.field.widget.input_type == 'checkbox' %}
                         <div class="row" style="padding: 0.9375rem; color: darkgray">
                           <div class="col-6 align-self-center">{{ field.label }}</div>
                           <div class="col-6">
-                            {% render_field field class+="form-control form-control-minimal" placeholder=field.label %}
+                            {% render_field field class+="form-control form-control-minimal border-0 px-0" placeholder=field.label %}
                           </div>
                         </div>
                       {% else  %}
-                        {% render_field field class+="form-control form-control-minimal" placeholder=field.label rows=6 %} 
+                        {% render_field field class+="form-control form-control-minimal border-0 px-0" placeholder=field.label rows=6 %} 
                       {% endif %}          
                       </div>
                     </div>
